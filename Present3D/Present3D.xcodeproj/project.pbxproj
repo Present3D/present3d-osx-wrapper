@@ -50,6 +50,8 @@
 		D4BEA2FC183A1ED500D55176 /* Present3DTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Present3DTests-Info.plist"; sourceTree = "<group>"; };
 		D4BEA2FE183A1ED500D55176 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D4BEA300183A1ED500D55176 /* Present3DTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Present3DTests.m; sourceTree = "<group>"; };
+		D4BEA30B183A421400D55176 /* build-osg.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "build-osg.sh"; path = "../vendor/build-osg.sh"; sourceTree = "<group>"; };
+		D4BEA30C183A421400D55176 /* copy-present3d-into-bundle.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "copy-present3d-into-bundle.sh"; path = "../vendor/copy-present3d-into-bundle.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,8 @@
 		D4BEA2CA183A1ED500D55176 = {
 			isa = PBXGroup;
 			children = (
+				D4BEA30B183A421400D55176 /* build-osg.sh */,
+				D4BEA30C183A421400D55176 /* copy-present3d-into-bundle.sh */,
 				D4BEA2DC183A1ED500D55176 /* Present3D */,
 				D4BEA2FA183A1ED500D55176 /* Present3DTests */,
 				D4BEA2D5183A1ED500D55176 /* Frameworks */,
@@ -164,6 +168,7 @@
 				D4BEA2CF183A1ED500D55176 /* Sources */,
 				D4BEA2D0183A1ED500D55176 /* Frameworks */,
 				D4BEA2D1183A1ED500D55176 /* Resources */,
+				D4BEA30A183A41B100D55176 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -247,6 +252,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D4BEA30A183A41B100D55176 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PROJECT_DIR}/../vendor/copy-present3d-into-bundle.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D4BEA2CF183A1ED500D55176 /* Sources */ = {
@@ -465,6 +486,7 @@
 				D4BEA306183A1ED500D55176 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4BEA307183A1ED500D55176 /* Build configuration list for PBXNativeTarget "Present3DTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +495,7 @@
 				D4BEA309183A1ED500D55176 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

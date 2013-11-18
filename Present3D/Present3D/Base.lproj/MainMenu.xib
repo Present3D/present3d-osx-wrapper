@@ -86,7 +86,7 @@
                             </menuItem>
                             <menuItem title="Close" keyEquivalent="w" id="73">
                                 <connections>
-                                    <action selector="performClose:" target="-1" id="193"/>
+                                    <action selector="stopTask:" target="494" id="rMJ-kL-jwa"/>
                                 </connections>
                             </menuItem>
                         </items>

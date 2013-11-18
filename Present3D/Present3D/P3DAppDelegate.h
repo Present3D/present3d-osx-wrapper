@@ -8,9 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface P3DAppDelegate : NSObject <NSApplicationDelegate>
+@interface P3DAppDelegate : NSObject <NSApplicationDelegate> {
+
+    NSTask* _task;
+}
 
 -(IBAction) openFile: (id)sender;
+-(IBAction) stopTask: (id)sender;
 -(void) startAppWithFile: (NSURL*) file_name;
 
 @property (assign) IBOutlet NSWindow *window;

@@ -38,16 +38,41 @@
 	}
 }
 
+
+-(IBAction) stopTask: (id)sender {
+    if (_task)
+    {
+        [_task terminate];
+        _task = nil;
+    }
+}
+
+
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
 {
     [self startAppWithFile: [NSURL fileURLWithPath:filename]];
     return YES;
 }
 
+
+
 -(void) startAppWithFile: (NSURL*) file_name
 {
     [[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:file_name];
     NSLog(@"Start app with: %@", file_name);
+    
+    if (_task){
+        [self stopTask: nil];
+    }
+    _task = [[NSTask alloc] init];
+    NSBundle* bundle = [NSBundle mainBundle];
+    _task.launchPath = [[bundle builtInPlugInsPath]  stringByAppendingString: @"/present3d"];
+    
+    NSMutableArray* arguments = [[NSMutableArray alloc] init];
+    [arguments addObject: [file_name path]];
+    _task.arguments = arguments;
+    
+    [_task launch];
 }
 
 

@@ -1,4 +1,6 @@
 .DS_Store
 Present3D/build
 Present3D/build/*
+vendor/osg-build/*
 
+/build/
