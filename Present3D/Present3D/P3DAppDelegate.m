@@ -46,6 +46,7 @@
 
 -(void) startAppWithFile: (NSURL*) file_name
 {
+    [[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:file_name];
     NSLog(@"Start app with: %@", file_name);
 }
 
