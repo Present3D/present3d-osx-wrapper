@@ -1,3 +1,9 @@
 [submodule "vendor/osg-source"]
 	path = vendor/osg-source
 	url = https://github.com/openscenegraph/osg.git
+[submodule "vendor/itk-source"]
+	path = vendor/itk-source
+	url = https://github.com/Kitware/ITK.git
+[submodule "vendor/dcmtk-source"]
+	path = vendor/dcmtk-source
+	url = https://github.com/commontk/DCMTK.git
