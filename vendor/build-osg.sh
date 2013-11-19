@@ -1,8 +1,10 @@
 #!/bin/sh
 
 ROOT=${PWD}
+DCMTK_ROOT=${ROOT}/dcmtk-build/install
 
 # create cmake-configuration for osg
+mkdir -p "${ROOT}/osg-build"
 cd ${ROOT}/osg-build
 /usr/bin/cmake -G Xcode \
 -D OSG_COMPILE_FRAMEWORKS:BOOL=1 \
@@ -12,8 +14,21 @@ cd ${ROOT}/osg-build
 -D CMAKE_OSX_ARCHITECTURES:STRING=x86_64 \
 -D CMAKE_INSTALL_PREFIX="$ROOT/osg-build" \
 -D OSG_PLUGINS=osgPlugins \
--D OSG_CXX_LANGUAGE_STANDARD:STRING=C++98 \
-CMAKE_OSX_SYSROOT:STRING=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk ../osg-source
+-D OSG_CXX_LANGUAGE_STANDARD:STRING=C++11 \
+-D DCMTK_DIR:PATH=${DCMTK_ROOT} \
+-D DCMTK_ROOT_INCLUDE_DIR:PATH=${DCMTK_ROOT}/include \
+-D DCMTK_config_INCLUDE_DIR:PATH=${DCMTK_ROOT}/include/dcmtk/config \
+-D DCMTK_dcmdata_INCLUDE_DIR:PATH=${DCMTK_ROOT}/include/dcmtk/dcmdata \
+-D DCMTK_dcmdata_LIBRARY:FILEPATH=${DCMTK_ROOT}/lib/libdcmdata.a \
+-D DCMTK_dcmimage_INCLUDE_DIR:PATH=${DCMTK_ROOT}/include/dcmtk/dcmimage \
+-D DCMTK_dcmimage_LIBRARY:FILEPATH=${DCMTK_ROOT}/lib/libdcmimage.a \
+-D DCMTK_dcmimgle_INCLUDE_DIR:PATH=${DCMTK_ROOT}/include/dcmtk/dcmimgle \
+-D DCMTK_dcmimgle_LIBRARY:FILEPATH=${DCMTK_ROOT}/lib/libdcmimgle.a \
+-D DCMTK_dcmnet_LIBRARY:FILEPATH=${DCMTK_ROOT}/lib/libdcmnet.a \
+-D DCMTK_oflog_LIBRARY:FILEPATH=${DCMTK_ROOT}/lib/liboflog.a \
+-D DCMTK_ofstd_INCLUDE_DIR:PATH=${DCMTK_ROOT}/include/dcmtk/ofstd \
+-D DCMTK_ofstd_LIBRARY:FILEPATH=${DCMTK_ROOT}/lib/libofstd.a \
+-D CMAKE_OSX_SYSROOT:STRING=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk ../osg-source
 
 #build osg
 /usr/bin/xcodebuild -configuration "Release" -target "ALL_BUILD"
