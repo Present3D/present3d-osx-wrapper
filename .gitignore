@@ -4,3 +4,5 @@ Present3D/build/*
 vendor/osg-build/*
 
 /build/
+
+/vendor/dcmtk-build/
