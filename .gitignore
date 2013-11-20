@@ -10,3 +10,6 @@ vendor/osg-build/*
 /vendor/libvnc-build/
 
 /vendor/itk-build/
+
+/vendor/tiff-source/
+/vendor/tiff-build/
