@@ -8,3 +8,5 @@ vendor/osg-build/*
 /vendor/dcmtk-build/
 
 /vendor/libvnc-build/
+
+/vendor/itk-build/
