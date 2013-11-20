@@ -10,3 +10,9 @@
 [submodule "vendor/libvnc-source"]
 	path = vendor/libvnc-source
 	url = http://git.code.sf.net/p/libvncserver/code
+[submodule "vendor/asio-source"]
+	path = vendor/asio-source
+	url = https://github.com/chriskohlhoff/asio.git
+[submodule "vendor/boost-source"]
+	path = vendor/boost-source
+	url = https://github.com/michaelcontento/boost-mirror.git

@@ -3,6 +3,8 @@
 ROOT=${PWD}
 DCMTK_ROOT=${ROOT}/dcmtk-build/install
 LIBVNC_ROOT=${ROOT}/libvnc-build/install
+BOOST_ROOT=${ROOT}/boost-source
+ASIO_ROOT=${ROOT}/asio-source/asio/include
 
 # create cmake-configuration for osg
 mkdir -p "${ROOT}/osg-build"
@@ -16,6 +18,8 @@ cd ${ROOT}/osg-build
 -D CMAKE_INSTALL_PREFIX="$ROOT/osg-build" \
 -D OSG_PLUGINS=osgPlugins \
 -D OSG_CXX_LANGUAGE_STANDARD:STRING=C++11 \
+-D ASIO_INCLUDE_DIR:PATH=${ASIO_ROOT} \
+-D Boost_INCLUDE_DIR:PATH=${BOOST_ROOT} \
 -D DCMTK_DIR:PATH=${DCMTK_ROOT} \
 -D DCMTK_ROOT_INCLUDE_DIR:PATH=${DCMTK_ROOT}/include \
 -D DCMTK_config_INCLUDE_DIR:PATH=${DCMTK_ROOT}/include/dcmtk/config \
