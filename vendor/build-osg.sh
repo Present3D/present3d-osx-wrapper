@@ -2,6 +2,7 @@
 
 ROOT=${PWD}
 DCMTK_ROOT=${ROOT}/dcmtk-build/install
+LIBVNC_ROOT=${ROOT}/libvnc-build/install
 
 # create cmake-configuration for osg
 mkdir -p "${ROOT}/osg-build"
@@ -28,6 +29,9 @@ cd ${ROOT}/osg-build
 -D DCMTK_oflog_LIBRARY:FILEPATH=${DCMTK_ROOT}/lib/liboflog.a \
 -D DCMTK_ofstd_INCLUDE_DIR:PATH=${DCMTK_ROOT}/include/dcmtk/ofstd \
 -D DCMTK_ofstd_LIBRARY:FILEPATH=${DCMTK_ROOT}/lib/libofstd.a \
+-D LIBVNCCLIENT_LIBRARY:FILEPATH=${LIBVNC_ROOT}/lib/libvncclient.dylib \
+-D LIBVNCSERVER_LIBRARY:FILEPATH=${LIBVNC_ROOT}/lib/libvncserver.dylib \
+-D LIBVNCSERVER_INCLUDE_DIR:FILEPATH=${LIBVNC_ROOT}/include \
 -D CMAKE_OSX_SYSROOT:STRING=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk ../osg-source
 
 #build osg

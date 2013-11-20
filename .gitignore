@@ -6,3 +6,5 @@ vendor/osg-build/*
 /build/
 
 /vendor/dcmtk-build/
+
+/vendor/libvnc-build/

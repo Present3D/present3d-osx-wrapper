@@ -7,3 +7,6 @@
 [submodule "vendor/dcmtk-source"]
 	path = vendor/dcmtk-source
 	url = https://github.com/commontk/DCMTK.git
+[submodule "vendor/libvnc-source"]
+	path = vendor/libvnc-source
+	url = http://git.code.sf.net/p/libvncserver/code
