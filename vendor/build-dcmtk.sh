@@ -14,6 +14,7 @@ cd ${ROOT}/dcmtk-build
 -D DCMTK_WITH_OPENSSL:BOOL=OFF \
 -D TIFF_INCLUDE_DIR:PATH=${TIFF_ROOT}/include \
 -D TIFF_LIBRARY:FILEPATH=${TIFF_ROOT}/lib/libtiff.a \
+-D CMAKE_OSX_DEPLOYMENT_TARGET:STRING='10.8' \
 -D CMAKE_OSX_SYSROOT:STRING=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk ../dcmtk-source
 
 #build dcmtk
