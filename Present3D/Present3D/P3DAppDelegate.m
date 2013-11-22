@@ -70,7 +70,14 @@
     
     NSMutableArray* arguments = [[NSMutableArray alloc] init];
     [arguments addObject: [file_name path]];
+    //[arguments addObject: @"--help"];
     _task.arguments = arguments;
+    
+    NSMutableDictionary* environment = [[NSMutableDictionary alloc] init];
+    [environment setValue: @"100 100 800 600" forKey: @"OSG_WINDOW"];
+    [environment setValue: @"DEBUG_INFO" forKey: @"OSG_NOTIFY_LEVEL"];
+    [environment setValue: [bundle builtInPlugInsPath] forKey: @"OSG_LIBRARY_PATH"];
+    _task.environment = environment;
     
     [_task launch];
 }
