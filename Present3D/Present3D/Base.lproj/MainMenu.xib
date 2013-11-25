@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1080" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
     </dependencies>
     <objects>
@@ -25,7 +26,11 @@
                             <menuItem isSeparatorItem="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Preferences…" keyEquivalent="," id="129"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="129">
+                                <connections>
+                                    <action selector="showPreferences:" target="494" id="mZY-ew-UMg"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="143">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
@@ -302,22 +307,9 @@
                 <menuItem title="Window" id="19">
                     <menu key="submenu" title="Window" systemMenu="window" id="24">
                         <items>
-                            <menuItem title="Minimize" keyEquivalent="m" id="23">
+                            <menuItem title="Show Log Output" keyEquivalent="l" id="5" userLabel="Show Log Output">
                                 <connections>
-                                    <action selector="performMiniaturize:" target="-1" id="37"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Zoom" id="239">
-                                <connections>
-                                    <action selector="performZoom:" target="-1" id="240"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="92">
-                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                            </menuItem>
-                            <menuItem title="Bring All to Front" id="5">
-                                <connections>
-                                    <action selector="arrangeInFront:" target="-1" id="39"/>
+                                    <action selector="showLogOutput:" target="494" id="3ZJ-zm-SNJ"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -337,17 +329,177 @@
                 </menuItem>
             </items>
         </menu>
-        <customObject id="494" customClass="P3DAppDelegate"/>
+        <customObject id="494" customClass="P3DAppDelegate">
+            <connections>
+                <outlet property="logWindow" destination="KAi-6x-9AC" id="kuM-nV-anh"/>
+                <outlet property="prefWindow" destination="DQI-sx-KvI" id="B3c-vY-VWs"/>
+            </connections>
+        </customObject>
         <customObject id="420" customClass="NSFontManager"/>
-        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="DQI-sx-KvI">
+        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="DQI-sx-KvI" customClass="P3DPreferencesWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="609" height="509"/>
+            <rect key="contentRect" x="196" y="240" width="451" height="197"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" id="6ar-x5-8ym">
-                <rect key="frame" x="0.0" y="0.0" width="609" height="509"/>
+                <rect key="frame" x="0.0" y="0.0" width="451" height="197"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7x6-Wa-HNa">
+                        <rect key="frame" x="18" y="159" width="83" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Debug level:" id="QpA-2b-j7V">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="elN-E2-0Wo">
+                        <rect key="frame" x="163" y="152" width="148" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="WARN" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="0Ko-mE-3kV" id="Gkv-3W-SsF">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <menu key="menu" title="OtherViews" id="dmP-YG-HpU">
+                                <items>
+                                    <menuItem title="NONE" id="yjL-QC-BAl"/>
+                                    <menuItem title="ALWAYS" id="kUN-WA-6JU"/>
+                                    <menuItem title="WARN" state="on" id="0Ko-mE-3kV"/>
+                                    <menuItem title="NOTICE" id="fdh-Hw-Szt"/>
+                                    <menuItem title="INFO" id="bUA-Ht-NPF"/>
+                                    <menuItem title="DEBUG_INFO" id="gl5-hy-NI6"/>
+                                    <menuItem title="DEBUG_FP" id="bgg-Ru-4k2"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                    </popUpButton>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tA8-ev-1vy">
+                        <rect key="frame" x="18" y="127" width="122" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Menubar behavior:" id="Kho-2A-Z70">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iOQ-iJ-zA1">
+                        <rect key="frame" x="163" y="121" width="148" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="143" id="uof-7U-v7q"/>
+                        </constraints>
+                        <popUpButtonCell key="cell" type="push" title="AUTO_HIDE" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="YsB-ZV-JE1" id="kZ4-nQ-e5y">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <menu key="menu" title="OtherViews" id="9Re-be-hPc">
+                                <items>
+                                    <menuItem title="AUTO_HIDE" state="on" id="YsB-ZV-JE1"/>
+                                    <menuItem title="FORCE_HIDE" id="uQT-fh-rwj"/>
+                                    <menuItem title="FORCE_SHOW" id="4IH-yW-BP7"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                    </popUpButton>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tpl-3x-OSq">
+                        <rect key="frame" x="368" y="13" width="69" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K8N-af-FdV">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="handleSaveAction:" target="DQI-sx-KvI" id="wVE-pG-Izd"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vq6-Cd-Yhn">
+                        <rect key="frame" x="286" y="13" width="82" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Oo7-Ku-gzA">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="handleCancelAction:" target="DQI-sx-KvI" id="CNg-rF-Mft"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7x6-Wa-HNa" firstAttribute="top" secondItem="6ar-x5-8ym" secondAttribute="top" constant="21" id="8oB-fH-4aC"/>
+                    <constraint firstItem="tpl-3x-OSq" firstAttribute="leading" secondItem="Vq6-Cd-Yhn" secondAttribute="trailing" constant="12" id="9fu-BY-Nja"/>
+                    <constraint firstItem="tA8-ev-1vy" firstAttribute="leading" secondItem="7x6-Wa-HNa" secondAttribute="leading" id="B7z-hf-nFR"/>
+                    <constraint firstItem="iOQ-iJ-zA1" firstAttribute="leading" secondItem="tA8-ev-1vy" secondAttribute="trailing" constant="27" id="Kkq-fB-Vgq"/>
+                    <constraint firstItem="elN-E2-0Wo" firstAttribute="leading" secondItem="7x6-Wa-HNa" secondAttribute="trailing" constant="66" id="YSV-Jj-F0L"/>
+                    <constraint firstAttribute="trailing" secondItem="tpl-3x-OSq" secondAttribute="trailing" constant="20" id="bvV-8u-gMR"/>
+                    <constraint firstItem="iOQ-iJ-zA1" firstAttribute="baseline" secondItem="tA8-ev-1vy" secondAttribute="baseline" id="d2K-N4-Gnn"/>
+                    <constraint firstAttribute="bottom" secondItem="Vq6-Cd-Yhn" secondAttribute="bottom" constant="20" id="koH-Jz-P1w"/>
+                    <constraint firstItem="7x6-Wa-HNa" firstAttribute="leading" secondItem="6ar-x5-8ym" secondAttribute="leading" constant="20" id="mkN-KW-46v"/>
+                    <constraint firstItem="elN-E2-0Wo" firstAttribute="baseline" secondItem="7x6-Wa-HNa" secondAttribute="baseline" constant="1" id="nfB-VR-Usm"/>
+                    <constraint firstItem="iOQ-iJ-zA1" firstAttribute="top" secondItem="elN-E2-0Wo" secondAttribute="bottom" constant="10" symbolic="YES" id="prR-EE-KoB"/>
+                    <constraint firstItem="iOQ-iJ-zA1" firstAttribute="trailing" secondItem="elN-E2-0Wo" secondAttribute="trailing" id="upY-zb-fF9"/>
+                    <constraint firstAttribute="bottom" secondItem="tpl-3x-OSq" secondAttribute="bottom" constant="20" id="upa-Xj-bzf"/>
+                </constraints>
             </view>
+            <connections>
+                <outlet property="logLevelPopup" destination="elN-E2-0Wo" id="Jfw-vG-a0k"/>
+                <outlet property="menubarBehaviorPopup" destination="iOQ-iJ-zA1" id="fJ1-JH-O8D"/>
+            </connections>
+        </window>
+        <window title="Log Output" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="KAi-6x-9AC" customClass="P3DLogWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="575" height="333"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
+            <value key="minSize" type="size" width="575" height="333"/>
+            <view key="contentView" id="Yel-5x-GmH">
+                <rect key="frame" x="0.0" y="0.0" width="575" height="333"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vK1-Yp-eHw">
+                        <rect key="frame" x="-1" y="-1" width="577" height="335"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <clipView key="contentView" id="Qhs-6o-BrW">
+                            <rect key="frame" x="1" y="1" width="560" height="333"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="qRO-Bg-gdL">
+                                    <rect key="frame" x="0.0" y="0.0" width="560" height="333"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="560" height="333"/>
+                                    <size key="maxSize" width="560" height="10000000"/>
+                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="560" height="333"/>
+                                    <size key="maxSize" width="560" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="1E8-DX-4Zc">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="cnU-1A-QAs">
+                            <rect key="frame" x="561" y="1" width="15" height="333"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="vK1-Yp-eHw" secondAttribute="bottom" constant="-1" id="isC-ah-ijq"/>
+                    <constraint firstItem="vK1-Yp-eHw" firstAttribute="leading" secondItem="Yel-5x-GmH" secondAttribute="leading" constant="-1" id="j8c-R4-3hk"/>
+                    <constraint firstAttribute="trailing" secondItem="vK1-Yp-eHw" secondAttribute="trailing" constant="-1" id="lSi-Gr-FzA"/>
+                    <constraint firstItem="vK1-Yp-eHw" firstAttribute="top" secondItem="Yel-5x-GmH" secondAttribute="top" constant="-1" id="wbZ-Wt-3qc"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="outputText" destination="qRO-Bg-gdL" id="yvw-w6-i8Q"/>
+            </connections>
         </window>
     </objects>
 </document>

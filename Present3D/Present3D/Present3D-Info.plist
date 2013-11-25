@@ -10,6 +10,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>p3d</string>
+				<string>xml</string>
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>P3D Presentation</string>
@@ -22,29 +23,12 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>osgt</string>
-			</array>
-			<key>CFBundleTypeName</key>
-			<string>OpenSceneGraph text file</string>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-		</dict>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
 				<string>osgb</string>
-			</array>
-			<key>CFBundleTypeName</key>
-			<string>OpenSceneGraph binary file</string>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-		</dict>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
+				<string>ive</string>
 				<string>osg</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>OpenSceneGraph file</string>
+			<string>OpenSceneGraph text file</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 		</dict>
@@ -62,7 +46,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>0.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>

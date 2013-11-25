@@ -18,6 +18,8 @@
 		D4BEA2F7183A1ED500D55176 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BEA2D6183A1ED500D55176 /* Cocoa.framework */; };
 		D4BEA2FF183A1ED500D55176 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4BEA2FD183A1ED500D55176 /* InfoPlist.strings */; };
 		D4BEA301183A1ED500D55176 /* Present3DTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BEA300183A1ED500D55176 /* Present3DTests.m */; };
+		D4FBA9DA1843597800A0AE0A /* P3DLogWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FBA9D91843597800A0AE0A /* P3DLogWindow.m */; };
+		D4FBA9DD184381FE00A0AE0A /* P3DPreferencesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FBA9DC184381FE00A0AE0A /* P3DPreferencesWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		D4BEA300183A1ED500D55176 /* Present3DTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Present3DTests.m; sourceTree = "<group>"; };
 		D4BEA30B183A421400D55176 /* build-osg.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "build-osg.sh"; path = "../vendor/build-osg.sh"; sourceTree = "<group>"; };
 		D4BEA30C183A421400D55176 /* copy-present3d-into-bundle.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "copy-present3d-into-bundle.sh"; path = "../vendor/copy-present3d-into-bundle.sh"; sourceTree = "<group>"; };
+		D4FBA9D81843597800A0AE0A /* P3DLogWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DLogWindow.h; sourceTree = "<group>"; };
+		D4FBA9D91843597800A0AE0A /* P3DLogWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DLogWindow.m; sourceTree = "<group>"; };
+		D4FBA9DB184381FE00A0AE0A /* P3DPreferencesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DPreferencesWindow.h; sourceTree = "<group>"; };
+		D4FBA9DC184381FE00A0AE0A /* P3DPreferencesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DPreferencesWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,10 @@
 				D4BEA2EB183A1ED500D55176 /* MainMenu.xib */,
 				D4BEA2EE183A1ED500D55176 /* Images.xcassets */,
 				D4BEA2DD183A1ED500D55176 /* Supporting Files */,
+				D4FBA9D81843597800A0AE0A /* P3DLogWindow.h */,
+				D4FBA9D91843597800A0AE0A /* P3DLogWindow.m */,
+				D4FBA9DB184381FE00A0AE0A /* P3DPreferencesWindow.h */,
+				D4FBA9DC184381FE00A0AE0A /* P3DPreferencesWindow.m */,
 			);
 			path = Present3D;
 			sourceTree = "<group>";
@@ -276,6 +286,8 @@
 			files = (
 				D4BEA2EA183A1ED500D55176 /* P3DAppDelegate.m in Sources */,
 				D4BEA2E3183A1ED500D55176 /* main.m in Sources */,
+				D4FBA9DD184381FE00A0AE0A /* P3DPreferencesWindow.m in Sources */,
+				D4FBA9DA1843597800A0AE0A /* P3DLogWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

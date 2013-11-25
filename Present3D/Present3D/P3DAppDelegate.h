@@ -8,16 +8,26 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "P3DPreferencesWindow.h"
+#import "P3DLogWindow.h"
+
 @interface P3DAppDelegate : NSObject <NSApplicationDelegate> {
 
     NSTask* _task;
+    NSPipe* _pipe;
+    id      _notification;
 }
 
 -(IBAction) openFile: (id)sender;
 -(IBAction) stopTask: (id)sender;
+-(IBAction) showLogOutput: (id)sender;
+-(IBAction) showPreferences: (id)sender;
 -(void) startAppWithFile: (NSURL*) file_name;
+-(void) taskStopped;
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet P3DLogWindow *logWindow;
+@property (weak) IBOutlet P3DPreferencesWindow *prefWindow;
 
 
 @end
