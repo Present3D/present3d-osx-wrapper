@@ -29,6 +29,7 @@
     [file_types_nsarray addObject: @"p3d"];
     [file_types_nsarray addObject: @"osgt"];
     [file_types_nsarray addObject: @"osgb"];
+    [file_types_nsarray addObject: @"xml"];
     
     [openDlg setAllowedFileTypes: file_types_nsarray];
     [openDlg setAllowsMultipleSelection: FALSE];

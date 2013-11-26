@@ -13,3 +13,11 @@ vendor/osg-build/*
 
 /vendor/tiff-source/
 /vendor/tiff-build/
+
+/vendor/png-source/
+/vendor/png-build/
+
+/vendor/jpeg-source/
+/vendor/jpeg-build/
+
+/Present3d.xcworkspace/xcshareddata/
