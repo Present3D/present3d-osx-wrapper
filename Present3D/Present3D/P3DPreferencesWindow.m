@@ -14,7 +14,12 @@
 {
     NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
     NSString* notify_level = [self getOsgNotifyLevel];
+    NSLog(@"notify-level: %@", notify_level);
     [_logLevelPopup selectItemWithTitle: notify_level ];
+    
+    NSString* menubar_behavior = [self getMenubarBehavior];
+    NSLog(@"menubar-behavior: %@", menubar_behavior);
+    [_menubarBehaviorPopup selectItemWithTitle: menubar_behavior ];
 }
 
 

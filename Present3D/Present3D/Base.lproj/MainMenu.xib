@@ -337,7 +337,7 @@
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
         <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="DQI-sx-KvI" customClass="P3DPreferencesWindow">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="451" height="197"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
@@ -359,7 +359,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="WARN" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="0Ko-mE-3kV" id="Gkv-3W-SsF">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="menu"/>
                             <menu key="menu" title="OtherViews" id="dmP-YG-HpU">
                                 <items>
                                     <menuItem title="NONE" id="yjL-QC-BAl"/>
@@ -390,7 +390,7 @@
                         </constraints>
                         <popUpButtonCell key="cell" type="push" title="AUTO_HIDE" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="YsB-ZV-JE1" id="kZ4-nQ-e5y">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="menu"/>
                             <menu key="menu" title="OtherViews" id="9Re-be-hPc">
                                 <items>
                                     <menuItem title="AUTO_HIDE" state="on" id="YsB-ZV-JE1"/>
@@ -464,18 +464,18 @@ Gw
                         <rect key="frame" x="-1" y="-1" width="577" height="335"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <clipView key="contentView" id="Qhs-6o-BrW">
-                            <rect key="frame" x="1" y="1" width="560" height="333"/>
+                            <rect key="frame" x="1" y="1" width="575" height="333"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="qRO-Bg-gdL">
-                                    <rect key="frame" x="0.0" y="0.0" width="560" height="333"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="575" height="333"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="560" height="333"/>
-                                    <size key="maxSize" width="560" height="10000000"/>
+                                    <size key="minSize" width="575" height="333"/>
+                                    <size key="maxSize" width="577" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="560" height="333"/>
-                                    <size key="maxSize" width="560" height="10000000"/>
+                                    <size key="minSize" width="575" height="333"/>
+                                    <size key="maxSize" width="577" height="10000000"/>
                                 </textView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -485,7 +485,7 @@ Gw
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="cnU-1A-QAs">
-                            <rect key="frame" x="561" y="1" width="15" height="333"/>
+                            <rect key="frame" x="560" y="1" width="16" height="333"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
