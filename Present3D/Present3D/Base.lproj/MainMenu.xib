@@ -339,14 +339,14 @@
         <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="DQI-sx-KvI" customClass="P3DPreferencesWindow">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="451" height="197"/>
+            <rect key="contentRect" x="196" y="240" width="451" height="250"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" id="6ar-x5-8ym">
-                <rect key="frame" x="0.0" y="0.0" width="451" height="197"/>
+                <rect key="frame" x="0.0" y="0.0" width="451" height="250"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7x6-Wa-HNa">
-                        <rect key="frame" x="18" y="159" width="83" height="17"/>
+                        <rect key="frame" x="18" y="212" width="83" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Debug level:" id="QpA-2b-j7V">
                             <font key="font" metaFont="system"/>
@@ -355,7 +355,7 @@
                         </textFieldCell>
                     </textField>
                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="elN-E2-0Wo">
-                        <rect key="frame" x="163" y="152" width="148" height="26"/>
+                        <rect key="frame" x="163" y="205" width="148" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="WARN" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="0Ko-mE-3kV" id="Gkv-3W-SsF">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -374,7 +374,7 @@
                         </popUpButtonCell>
                     </popUpButton>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tA8-ev-1vy">
-                        <rect key="frame" x="18" y="127" width="122" height="17"/>
+                        <rect key="frame" x="18" y="180" width="122" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Menubar behavior:" id="Kho-2A-Z70">
                             <font key="font" metaFont="system"/>
@@ -383,7 +383,7 @@
                         </textFieldCell>
                     </textField>
                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iOQ-iJ-zA1">
-                        <rect key="frame" x="163" y="121" width="148" height="26"/>
+                        <rect key="frame" x="163" y="174" width="148" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="143" id="uof-7U-v7q"/>
@@ -428,6 +428,90 @@ Gw
                             <action selector="handleCancelAction:" target="DQI-sx-KvI" id="CNg-rF-Mft"/>
                         </connections>
                     </button>
+                    <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j8v-9B-Ego">
+                        <rect key="frame" x="162" y="142" width="203" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="sCg-lK-KNN">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.97254901960784312" alpha="0.0" colorSpace="deviceRGB"/>
+                        </pathCell>
+                    </pathControl>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CtB-QX-A7s">
+                        <rect key="frame" x="18" y="147" width="93" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="OSG File path:" id="lD9-MH-oKV">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8X8-9E-9IB">
+                        <rect key="frame" x="162" y="117" width="203" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="3n4-Ba-eaN">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="0.0" colorSpace="deviceRGB"/>
+                        </pathCell>
+                    </pathControl>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JK1-VM-uaN">
+                        <rect key="frame" x="19" y="121" width="119" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Configuration file:" id="zm6-fa-flN">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l8h-W2-SoX">
+                        <rect key="frame" x="374" y="144" width="44" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundRect" title="Clear" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="msN-mc-phR">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="handleClearFilePathBtn:" target="DQI-sx-KvI" id="Pex-JD-f48"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IM6-2J-KbD">
+                        <rect key="frame" x="374" y="118" width="44" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundRect" title="Clear" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kub-qV-PjX">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="handleClearConfigPathBtn:" target="DQI-sx-KvI" id="Skr-ly-yIq"/>
+                        </connections>
+                    </button>
+                    <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZo-fh-W37">
+                        <rect key="frame" x="162" y="92" width="203" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="X0L-w1-XCj">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="0.0" colorSpace="deviceRGB"/>
+                        </pathCell>
+                    </pathControl>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54Q-Gj-CAL">
+                        <rect key="frame" x="19" y="96" width="74" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Cursor file:" id="kSO-Lj-LvJ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U60-Rn-9WY">
+                        <rect key="frame" x="374" y="93" width="44" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundRect" title="Clear" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sna-Tb-kmc">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="handleClearCursorPathBtn:" target="DQI-sx-KvI" id="Wln-dm-OHi"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="7x6-Wa-HNa" firstAttribute="top" secondItem="6ar-x5-8ym" secondAttribute="top" constant="21" id="8oB-fH-4aC"/>
@@ -448,6 +532,10 @@ Gw
             <connections>
                 <outlet property="logLevelPopup" destination="elN-E2-0Wo" id="Jfw-vG-a0k"/>
                 <outlet property="menubarBehaviorPopup" destination="iOQ-iJ-zA1" id="fJ1-JH-O8D"/>
+                <outlet property="osgConfigPathControl" destination="8X8-9E-9IB" id="5bM-Pd-y9I"/>
+                <outlet property="osgCursorPathControl" destination="nZo-fh-W37" id="a5A-qS-dHa"/>
+                <outlet property="osgFilePathControl" destination="j8v-9B-Ego" id="7LB-qT-d0v"/>
+                <outlet property="p3dCursorPathControl" destination="nZo-fh-W37" id="BGi-aQ-vAO"/>
             </connections>
         </window>
         <window title="Log Output" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="KAi-6x-9AC" customClass="P3DLogWindow">

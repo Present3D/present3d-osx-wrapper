@@ -124,6 +124,17 @@
     
     [environment setValue: [_prefWindow getOsgNotifyLevel] forKey: @"OSG_NOTIFY_LEVEL"];
     [environment setValue: [_prefWindow getMenubarBehavior] forKey: @"OSG_MENUBAR_BEHAVIOR"];
+
+    if([_prefWindow getOsgFilePath])
+        [environment setValue: [[_prefWindow getOsgFilePath] path] forKey: @"OSG_FILE_PATH"];
+
+    if([_prefWindow getOsgConfigFile])
+        [environment setValue: [[_prefWindow getOsgConfigFile] path] forKey: @"OSG_CONFIG_FILE"];
+    
+    if([_prefWindow getP3DCursorFile])
+        [environment setValue: [[_prefWindow getP3DCursorFile] path] forKey: @"P3D_CURSOR"];
+    
+    
     
     [environment setValue: [bundle builtInPlugInsPath] forKey: @"OSG_LIBRARY_PATH"];
     _task.environment = environment;
