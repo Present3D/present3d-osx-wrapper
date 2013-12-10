@@ -134,7 +134,16 @@
     if([_prefWindow getP3DCursorFile])
         [environment setValue: [[_prefWindow getP3DCursorFile] path] forKey: @"P3D_CURSOR"];
     
-    
+    NSString* stereo_mode = [_prefWindow getOsgStereoMode];
+    if (![stereo_mode isEqualToString: @"OFF"])
+    {
+        [environment setValue: stereo_mode forKey: @"OSG_STEREO_MODE"];
+        [environment setValue: @"ON" forKey: @"OSG_STEREO"];
+    }
+    else
+    {
+        [environment setValue: @"OFF" forKey: @"OSG_STEREO"];
+    }
     
     [environment setValue: [bundle builtInPlugInsPath] forKey: @"OSG_LIBRARY_PATH"];
     _task.environment = environment;

@@ -25,7 +25,7 @@
                   symbolName = "__35-[P3DAppDelegate startAppWithFile:]_block_invoke"
                   moduleName = "Present3D"
                   urlString = "file:///Volumes/Daten/dev/osx/present3d-app/Present3D/Present3D/P3DAppDelegate.m"
-                  timestampString = "407683672.200565"
+                  timestampString = "408363674.083801"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "99"
@@ -39,7 +39,7 @@
                   symbolName = "__35-[P3DAppDelegate startAppWithFile:]_block_invoke"
                   moduleName = "Present3D"
                   urlString = "file:///Volumes/Daten/dev/osx/present3d-app/Present3D/Present3D/P3DAppDelegate.m"
-                  timestampString = "407683672.200772"
+                  timestampString = "408363674.083985"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "99"
@@ -71,12 +71,12 @@
                   symbolName = "-[P3DAppDelegate startAppWithFile:]"
                   moduleName = "Present3D"
                   urlString = "file:///Volumes/Daten/dev/osx/present3d-app/Present3D/Present3D/P3DAppDelegate.m"
-                  timestampString = "407683672.200964"
+                  timestampString = "408363674.084153"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
                   endingLineNumber = "97"
-                  offsetFromSymbolStart = "553">
+                  offsetFromSymbolStart = "560">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -85,12 +85,12 @@
                   symbolName = "-[P3DAppDelegate startAppWithFile:]"
                   moduleName = "Present3D"
                   urlString = "file:///Volumes/Daten/dev/osx/present3d-app/Present3D/Present3D/P3DAppDelegate.m"
-                  timestampString = "407683672.201126"
+                  timestampString = "408363674.084343"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
                   endingLineNumber = "97"
-                  offsetFromSymbolStart = "588">
+                  offsetFromSymbolStart = "595">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -99,12 +99,12 @@
                   symbolName = "-[P3DAppDelegate startAppWithFile:]"
                   moduleName = "Present3D"
                   urlString = "file:///Volumes/Daten/dev/osx/present3d-app/Present3D/Present3D/P3DAppDelegate.m"
-                  timestampString = "407683672.201287"
+                  timestampString = "408363674.084547"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
                   endingLineNumber = "97"
-                  offsetFromSymbolStart = "752">
+                  offsetFromSymbolStart = "758">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -113,12 +113,12 @@
                   symbolName = "-[P3DAppDelegate startAppWithFile:]"
                   moduleName = "Present3D"
                   urlString = "file:///Volumes/Daten/dev/osx/present3d-app/Present3D/Present3D/P3DAppDelegate.m"
-                  timestampString = "407683672.201437"
+                  timestampString = "408363674.084839"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
                   endingLineNumber = "97"
-                  offsetFromSymbolStart = "1863">
+                  offsetFromSymbolStart = "2056">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -127,7 +127,7 @@
                   symbolName = "__35-[P3DAppDelegate startAppWithFile:]_block_invoke"
                   moduleName = "Present3D"
                   urlString = "file:///Volumes/Daten/dev/osx/present3d-app/Present3D/Present3D/P3DAppDelegate.m"
-                  timestampString = "407683672.201588"
+                  timestampString = "408363674.085084"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "99"
@@ -176,11 +176,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DPreferencesWindow.m"
-            timestampString = "407683672.175896"
+            timestampString = "408362885.204412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "-handleSaveAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -208,11 +208,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DPreferencesWindow.m"
-            timestampString = "407683672.175896"
+            timestampString = "408362885.204412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-handleClearCursorPathBtn:"
             landmarkType = "5">
          </BreakpointContent>
@@ -224,11 +224,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DPreferencesWindow.m"
-            timestampString = "407683672.175896"
+            timestampString = "408362885.204412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-pathControl:willDisplayOpenPanel:"
             landmarkType = "5">
             <Locations>
@@ -270,11 +270,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DPreferencesWindow.m"
-            timestampString = "407683672.175896"
+            timestampString = "408362885.204412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "-pathControl:willDisplayOpenPanel:"
             landmarkType = "5">
          </BreakpointContent>

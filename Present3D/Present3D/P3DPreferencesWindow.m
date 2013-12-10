@@ -22,6 +22,9 @@
     NSLog(@"menubar-behavior: %@", menubar_behavior);
     [_menubarBehaviorPopup selectItemWithTitle: menubar_behavior ];
     
+    NSString* stereo_mode = [self getOsgStereoMode];
+    [_stereoModePopup selectItemWithTitle: stereo_mode];
+    
     [_osgFilePathControl setURL: [self getOsgFilePath]];
     [_osgConfigPathControl setURL: [self getOsgConfigFile]];
     [_p3dCursorPathControl setURL: [self getP3DCursorFile]];
@@ -46,6 +49,7 @@
    
     [defaults setValue: _logLevelPopup.titleOfSelectedItem forKey: @"OSG_NOTIFY_LEVEL"];
     [defaults setValue: _menubarBehaviorPopup.titleOfSelectedItem forKey: @"OSG_MENUBAR_BEHAVIOR"];
+    [defaults setValue: _stereoModePopup.titleOfSelectedItem forKey: @"OSG_STEREO_MODE"];
     
     [defaults setURL: _osgFilePathControl.URL forKey: @"OSG_FILE_PATH"];
     [defaults setURL: _osgConfigPathControl.URL forKey: @"OSG_CONFIG_FILE"];
@@ -137,5 +141,11 @@
 {
     return [self getSavedURLForKey: @"P3D_CURSOR" default: nil];
 }
+
+-(NSString*) getOsgStereoMode
+{
+    return [self getSavedStringForKey: @"OSG_STEREO_MODE" default: @"OFF"];
+}
+
 
 @end
