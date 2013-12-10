@@ -23,9 +23,13 @@
     NSString* stereo_mode = [self getOsgStereoMode];
     [_stereoModePopup selectItemWithTitle: stereo_mode];
 
-
     NSString* cursor_mode = [self getP3DCursorMode];
     [_cursorModePopup selectItemWithTitle: cursor_mode];
+    
+    [_splitStereoHorizontalEyeMapping selectItemWithTitle:[self getOsgSplitStereoHorizontalEyeMapping]];
+    [_splitStereoVerticalEyeMapping selectItemWithTitle:[self getOsgSplitStereoVerticalEyeMapping]];
+    
+    [self updateStereoEyeMappingPopup: _stereoModePopup];
     
     NSString* add_params = [self getAdditionalCommandLineParameters];
     [_additonalCommandLineParametersTextView setString: add_params];
@@ -60,6 +64,8 @@
     [defaults setValue: _stereoModePopup.titleOfSelectedItem forKey: @"OSG_STEREO_MODE"];
     [defaults setValue: _cursorModePopup.titleOfSelectedItem forKey: @"P3D_SHOW_CURSOR"];
     [defaults setValue: _additonalCommandLineParametersTextView.string forKey: @"P3D_ADDITIONAL_COMMAND_LINE_PARAMETERS"];
+    [defaults setValue: _splitStereoHorizontalEyeMapping.titleOfSelectedItem forKey: @"OSG_SPLIT_STEREO_HORIZONTAL_EYE_MAPPING"];
+    [defaults setValue: _splitStereoVerticalEyeMapping.titleOfSelectedItem forKey: @"OSG_SPLIT_STEREO_VERTICAL_EYE_MAPPING"];
     
     [defaults setURL: _osgFilePathControl.URL forKey: @"OSG_FILE_PATH"];
     [defaults setURL: _osgConfigPathControl.URL forKey: @"OSG_CONFIG_FILE"];
@@ -85,6 +91,16 @@
 -(IBAction) handleClearCursorPathBtn:(id)sender
 {
     [_p3dCursorPathControl setURL: nil];
+}
+
+-(IBAction) updateStereoEyeMappingPopup: (id)sender
+{
+    if (sender != _stereoModePopup)
+        return;
+    NSString* stereo_mode = _stereoModePopup.titleOfSelectedItem;
+
+    [_splitStereoHorizontalEyeMapping setEnabled: [stereo_mode isEqualToString: @"HORIZONTAL_SPLIT"]];
+    [_splitStereoVerticalEyeMapping setEnabled: [stereo_mode isEqualToString: @"VERTICAL_SPLIT"]];
 }
 
 #pragma mark - NSPathControlDelegate
@@ -167,4 +183,13 @@
     return [self getSavedStringForKey: @"P3D_ADDITIONAL_COMMAND_LINE_PARAMETERS" default: @""];
 }
 
+-(NSString*) getOsgSplitStereoHorizontalEyeMapping
+{
+    return [self getSavedStringForKey: @"OSG_SPLIT_STEREO_HORIZONTAL_EYE_MAPPING" default: @"LEFT_EYE_LEFT_VIEWPORT"];
+}
+
+-(NSString*) getOsgSplitStereoVerticalEyeMapping
+{
+    return [self getSavedStringForKey: @"OSG_SPLIT_STEREO_VERTICAL_EYE_MAPPING" default: @"LEFT_EYE_TOP_VIEWPORT"];
+}
 @end

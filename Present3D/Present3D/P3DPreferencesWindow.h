@@ -16,6 +16,8 @@
 @property IBOutlet NSPopUpButton *menubarBehaviorPopup;
 @property IBOutlet NSPopUpButton *stereoModePopup;
 @property IBOutlet NSPopUpButton *cursorModePopup;
+@property IBOutlet NSPopUpButton *splitStereoHorizontalEyeMapping;
+@property IBOutlet NSPopUpButton *splitStereoVerticalEyeMapping;
 @property IBOutlet NSTextView *additonalCommandLineParametersTextView;
 
 @property IBOutlet NSPathControl *osgFilePathControl;
@@ -36,6 +38,7 @@
 -(IBAction) handleClearConfigPathBtn: (id)sender;
 -(IBAction) handleClearCursorPathBtn: (id)sender;
 
+-(IBAction) updateStereoEyeMappingPopup: (id)sender;
 
 -(NSString*) getOsgNotifyLevel;
 -(NSString*) getMenubarBehavior;
@@ -45,5 +48,7 @@
 -(NSURL*) getP3DCursorFile;
 -(NSString*)getP3DCursorMode;
 -(NSString*)getAdditionalCommandLineParameters;
+-(NSString*) getOsgSplitStereoHorizontalEyeMapping;
+-(NSString*) getOsgSplitStereoVerticalEyeMapping;
 
 @end

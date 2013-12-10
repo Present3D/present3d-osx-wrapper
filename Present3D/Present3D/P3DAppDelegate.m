@@ -156,6 +156,11 @@
     {
         [environment setValue: stereo_mode forKey: @"OSG_STEREO_MODE"];
         [environment setValue: @"ON" forKey: @"OSG_STEREO"];
+        if([stereo_mode isEqualToString: @"HORIZONTAL_SPLIT"])
+            [environment setValue: [_prefWindow getOsgSplitStereoHorizontalEyeMapping] forKey: @"OSG_SPLIT_STEREO_HORIZONTAL_EYE_MAPPING"];
+
+        if([stereo_mode isEqualToString: @"VERTICAL_SPLIT"])
+            [environment setValue: [_prefWindow getOsgSplitStereoVerticalEyeMapping] forKey: @"OSG_SPLIT_STEREO_VERTICAL_EYE_MAPPING"];
     }
     else
     {

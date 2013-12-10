@@ -532,14 +532,14 @@ Gw
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="van-Ih-bfL">
                                             <rect key="frame" x="15" y="169" width="122" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Stereo Mode" id="wD1-RJ-sYp">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Stereo Mode:" id="wD1-RJ-sYp">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64W-OD-FML">
-                                            <rect key="frame" x="160" y="163" width="257" height="26"/>
+                                            <rect key="frame" x="194" y="163" width="223" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="7wu-1p-P7y">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -551,13 +551,67 @@ Gw
                                                         <menuItem title="ANAGLYPHIC" id="9lF-dw-Huq"/>
                                                         <menuItem title="HORIZONTAL_SPLIT" id="U31-KX-bOx"/>
                                                         <menuItem title="VERTICAL_SPLIT" id="4Z6-8i-gu8"/>
-                                                        <menuItem title="VERTICAL_SPLIT" id="zCF-eJ-4Xa"/>
                                                         <menuItem title="HORIZONTAL_INTERLACE" id="b3W-9B-uml"/>
                                                         <menuItem title="VERTICAL_INTERLACE" id="0XS-bd-8LD"/>
                                                         <menuItem title="CHECKERBOARD" id="3AK-zk-2gs"/>
                                                     </items>
                                                 </menu>
                                             </popUpButtonCell>
+                                            <connections>
+                                                <action selector="updateStereoEyeMappingPopup:" target="DQI-sx-KvI" id="NTg-V6-zLR"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cjJ-J5-CWU">
+                                            <rect key="frame" x="15" y="143" width="159" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Horizontal Eye mapping:" id="Yry-3x-ZnJ">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fj-Ji-sIQ">
+                                            <rect key="frame" x="194" y="137" width="223" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="LEFT_EYE_RIGHT_VIEWPORT" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="1" imageScaling="proportionallyDown" inset="2" selectedItem="m8e-uP-cUH" id="f43-cx-MN5">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" title="OtherViews" id="u1w-s9-ttj">
+                                                    <items>
+                                                        <menuItem title="LEFT_EYE_LEFT_VIEWPORT" tag="1" id="86q-Z6-xFs"/>
+                                                        <menuItem title="LEFT_EYE_RIGHT_VIEWPORT" state="on" tag="1" id="m8e-uP-cUH"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <action selector="updateStereoEyeMappingPopup:" target="DQI-sx-KvI" id="80p-tZ-QOA"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7TA-OS-3Ys">
+                                            <rect key="frame" x="15" y="117" width="140" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Vertical Eye mapping:" id="WTY-Yb-ZUh">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSv-u3-WOm">
+                                            <rect key="frame" x="194" y="111" width="223" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="LEFT_EYE_TOP_VIEWPORT" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" tag="2" imageScaling="proportionallyDown" inset="2" selectedItem="Nq2-rU-Xrv" id="9k4-Uq-n3D">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" title="OtherViews" id="okj-zD-iL8">
+                                                    <items>
+                                                        <menuItem title="LEFT_EYE_TOP_VIEWPORT" tag="2" id="Nq2-rU-Xrv"/>
+                                                        <menuItem title="LEFT_EYE_BOTTOM_VIEWPORT" state="on" tag="2" id="Auo-Lu-ayh"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <action selector="updateStereoEyeMappingPopup:" target="DQI-sx-KvI" id="hhG-99-MaB"/>
+                                            </connections>
                                         </popUpButton>
                                     </subviews>
                                 </view>
@@ -660,6 +714,9 @@ Gw
                 <outlet property="osgCursorPathControl" destination="nZo-fh-W37" id="a5A-qS-dHa"/>
                 <outlet property="osgFilePathControl" destination="j8v-9B-Ego" id="7LB-qT-d0v"/>
                 <outlet property="p3dCursorPathControl" destination="nZo-fh-W37" id="BGi-aQ-vAO"/>
+                <outlet property="splitStereoHorizontalEyeMapping" destination="0fj-Ji-sIQ" id="L0y-o0-5rX"/>
+                <outlet property="splitStereoVerticalEyeMapping" destination="wSv-u3-WOm" id="89Z-0R-cHo"/>
+                <outlet property="stereoEyeMappingPopup" destination="0fj-Ji-sIQ" id="kbd-B0-Sql"/>
                 <outlet property="stereoModePopup" destination="64W-OD-FML" id="9Rk-UH-jqs"/>
             </connections>
         </window>
