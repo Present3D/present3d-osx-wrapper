@@ -15,6 +15,8 @@
 @property IBOutlet NSPopUpButton *logLevelPopup;
 @property IBOutlet NSPopUpButton *menubarBehaviorPopup;
 @property IBOutlet NSPopUpButton *stereoModePopup;
+@property IBOutlet NSPopUpButton *cursorModePopup;
+
 @property IBOutlet NSPathControl *osgFilePathControl;
 @property IBOutlet NSPathControl *osgConfigPathControl;
 @property IBOutlet NSPathControl *p3dCursorPathControl;
@@ -40,5 +42,6 @@
 -(NSURL*) getOsgFilePath;
 -(NSURL*) getOsgConfigFile;
 -(NSURL*) getP3DCursorFile;
+-(NSString*)getP3DCursorMode;
 
 @end

@@ -133,6 +133,10 @@
     
     if([_prefWindow getP3DCursorFile])
         [environment setValue: [[_prefWindow getP3DCursorFile] path] forKey: @"P3D_CURSOR"];
+
+    if([_prefWindow getP3DCursorMode])
+        [environment setValue: [_prefWindow getP3DCursorMode] forKey: @"P3D_SHOW_CURSOR"];
+
     
     NSString* stereo_mode = [_prefWindow getOsgStereoMode];
     if (![stereo_mode isEqualToString: @"OFF"])
