@@ -15,11 +15,9 @@
     NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
 
     NSString* notify_level = [self getOsgNotifyLevel];
-    NSLog(@"notify-level: %@", notify_level);
     [_logLevelPopup selectItemWithTitle: notify_level ];
     
     NSString* menubar_behavior = [self getMenubarBehavior];
-    NSLog(@"menubar-behavior: %@", menubar_behavior);
     [_menubarBehaviorPopup selectItemWithTitle: menubar_behavior ];
     
     NSString* stereo_mode = [self getOsgStereoMode];
@@ -28,6 +26,12 @@
 
     NSString* cursor_mode = [self getP3DCursorMode];
     [_cursorModePopup selectItemWithTitle: cursor_mode];
+    
+    NSString* add_params = [self getAdditionalCommandLineParameters];
+    [_additonalCommandLineParametersTextView setString: add_params];
+    
+    _additonalCommandLineParametersTextView.automaticQuoteSubstitutionEnabled = NO;
+    [_additonalCommandLineParametersTextView setEnabledTextCheckingTypes: 0];
     
     [_osgFilePathControl setURL: [self getOsgFilePath]];
     [_osgConfigPathControl setURL: [self getOsgConfigFile]];
@@ -55,6 +59,7 @@
     [defaults setValue: _menubarBehaviorPopup.titleOfSelectedItem forKey: @"OSG_MENUBAR_BEHAVIOR"];
     [defaults setValue: _stereoModePopup.titleOfSelectedItem forKey: @"OSG_STEREO_MODE"];
     [defaults setValue: _cursorModePopup.titleOfSelectedItem forKey: @"P3D_SHOW_CURSOR"];
+    [defaults setValue: _additonalCommandLineParametersTextView.string forKey: @"P3D_ADDITIONAL_COMMAND_LINE_PARAMETERS"];
     
     [defaults setURL: _osgFilePathControl.URL forKey: @"OSG_FILE_PATH"];
     [defaults setURL: _osgConfigPathControl.URL forKey: @"OSG_CONFIG_FILE"];
@@ -155,6 +160,11 @@
 -(NSString*) getP3DCursorMode
 {
     return [self getSavedStringForKey: @"P3D_SHOW_CURSOR" default: @"YES"];
+}
+
+-(NSString*) getAdditionalCommandLineParameters
+{
+    return [self getSavedStringForKey: @"P3D_ADDITIONAL_COMMAND_LINE_PARAMETERS" default: @""];
 }
 
 @end

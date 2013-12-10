@@ -24,10 +24,13 @@
 -(IBAction) showPreferences: (id)sender;
 -(void) startAppWithFile: (NSURL*) file_name;
 -(void) taskStopped;
+-(void) revealLogWindow;
+-(BOOL) continueReading;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet P3DLogWindow *logWindow;
 @property (weak) IBOutlet P3DPreferencesWindow *prefWindow;
+@property (assign, nonatomic) BOOL checkPipe;
 
 
 @end

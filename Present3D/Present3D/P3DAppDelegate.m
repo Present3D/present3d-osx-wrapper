@@ -8,6 +8,9 @@
 
 #import "P3DAppDelegate.h"
 
+#define BlockWeakObject(o) __typeof(o) __weak
+#define BlockWeakSelf BlockWeakObject(self)
+
 @implementation P3DAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -90,23 +93,30 @@
     [_task setStandardOutput: _pipe];
     
     self.logWindow.outputText.string = @"";
+    _checkPipe = TRUE;
     
     NSString* parent_folder = [[file_name path] stringByDeletingLastPathComponent];
     _task.currentDirectoryPath = parent_folder;
     
+    BlockWeakSelf weakSelf = self;
+
     _notification = [[NSNotificationCenter defaultCenter] addObserverForName:NSFileHandleDataAvailableNotification object:[_pipe fileHandleForReading] queue:nil usingBlock:^(NSNotification *notification){
         
         NSData *output = [[_pipe fileHandleForReading] availableData];
         NSString *outStr = [[NSString alloc] initWithData:output encoding:NSUTF8StringEncoding];
-        if (_task && [_task isRunning])
+        
+        if(outStr.length > 0)
         {
-        //dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.logWindow.outputText setFont:[NSFont userFixedPitchFontOfSize:0.0]];
             self.logWindow.outputText.string = [self.logWindow.outputText.string stringByAppendingString:[NSString stringWithFormat:@"\n%@", outStr]];
             // Scroll to end of outputText field
             NSRange range;
             range = NSMakeRange([self.logWindow.outputText.string length], 0);
             [self.logWindow.outputText scrollRangeToVisible:range];
-        //});
+        }
+        BOOL continue_reading = [weakSelf continueReading];
+        if ((output.length > 0) || continue_reading)
+        {
             [[_pipe fileHandleForReading] waitForDataInBackgroundAndNotify];
         }
     }];
@@ -116,6 +126,9 @@
     
     NSMutableArray* arguments = [[NSMutableArray alloc] init];
     [arguments addObject: [file_name path]];
+    if([_prefWindow getAdditionalCommandLineParameters])
+        [arguments addObject:[_prefWindow getAdditionalCommandLineParameters]];
+        
     //[arguments addObject: @"--help"];
     _task.arguments = arguments;
     
@@ -152,14 +165,28 @@
     [environment setValue: [bundle builtInPlugInsPath] forKey: @"OSG_LIBRARY_PATH"];
     _task.environment = environment;
     
+    
     _task.terminationHandler = ^(NSTask *aTask){
         dispatch_sync(dispatch_get_main_queue(), ^{
             [my_app activateWithOptions: NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps];
+            if(aTask.terminationStatus != 0)
+                [weakSelf revealLogWindow];
+                weakSelf.checkPipe = FALSE;
         });
     };
     
     [_task launch];
 }
+
+-(BOOL)continueReading {
+    // NSLog(@"Checkpipe: %i", _checkPipe);
+    return _checkPipe;
+}
+
+-(void) revealLogWindow {
+    [self showLogOutput: NULL];
+}
+
 
 -(IBAction) showLogOutput: (id)sender
 {
