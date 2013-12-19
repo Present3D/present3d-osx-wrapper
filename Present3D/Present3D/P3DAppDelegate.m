@@ -193,8 +193,8 @@
         [environment setValue: @"OFF" forKey: @"OSG_STEREO"];
     }
     
-    NSLog(@"Arguments: %@", arguments);
-    NSLog(@"Environment: %@", environment);
+    // NSLog(@"Arguments: %@", arguments);
+    // NSLog(@"Environment: %@", environment);
     
     [environment setValue: [bundle builtInPlugInsPath] forKey: @"OSG_LIBRARY_PATH"];
 
