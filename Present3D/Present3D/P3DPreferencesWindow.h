@@ -23,6 +23,8 @@
 @property IBOutlet NSPathControl *osgFilePathControl;
 @property IBOutlet NSPathControl *osgConfigPathControl;
 @property IBOutlet NSPathControl *p3dCursorPathControl;
+@property IBOutlet NSPathControl *leftKeystoneFile;
+@property IBOutlet NSPathControl *rightKeystoneFile;
 @property IBOutlet NSButton *clearFilePathBtn;
 @property IBOutlet NSButton *clearConfigPathBtn;
 @property IBOutlet NSButton *clearCursorFile;
@@ -37,8 +39,14 @@
 -(IBAction) handleClearFilePathBtn: (id)sender;
 -(IBAction) handleClearConfigPathBtn: (id)sender;
 -(IBAction) handleClearCursorPathBtn: (id)sender;
+-(IBAction) handleClearLeftKeystoneFileBtn: (id)sender;
+-(IBAction) handleClearRightKeystoneFileBtn: (id)sender;
 
 -(IBAction) updateStereoEyeMappingPopup: (id)sender;
+
++(NSString*) getSavedStringForKey:(NSString*) key default: (NSString*) default_value;
++(NSURL*) getSavedURLForKey:(NSString*) key default: (NSURL*) default_value;
+
 
 -(NSString*) getOsgNotifyLevel;
 -(NSString*) getMenubarBehavior;
@@ -50,5 +58,7 @@
 -(NSString*)getAdditionalCommandLineParameters;
 -(NSString*) getOsgSplitStereoHorizontalEyeMapping;
 -(NSString*) getOsgSplitStereoVerticalEyeMapping;
+-(NSURL*) getLeftKeystoneFile;
+-(NSURL*) getRightKeystoneFile;
 
 @end

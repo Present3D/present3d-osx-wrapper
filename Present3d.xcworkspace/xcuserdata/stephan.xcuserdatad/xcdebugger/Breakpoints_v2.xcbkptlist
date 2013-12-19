@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DAppDelegate.m"
-            timestampString = "408368400.612858"
+            timestampString = "409142522.129869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "-startAppWithFile:"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "-startTask:withCWD:withArguments:withEnvironment:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -56,12 +56,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DAppDelegate.m"
-            timestampString = "408368400.612858"
+            timestampString = "409142522.129869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "-startAppWithFile:"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+            landmarkName = "-startTask:withCWD:withArguments:withEnvironment:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -144,11 +144,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DAppDelegate.m"
-            timestampString = "408367104.499633"
+            timestampString = "409140945.925989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-taskStopped"
             landmarkType = "5">
          </BreakpointContent>
@@ -160,12 +160,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DAppDelegate.m"
-            timestampString = "408368767.424095"
+            timestampString = "409142522.129869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-startAppWithFile:"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "-startTask:withCWD:withArguments:withEnvironment:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -176,11 +176,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DPreferencesWindow.m"
-            timestampString = "408375435.780926"
+            timestampString = "409141932.266096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "-handleSaveAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -208,11 +208,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DPreferencesWindow.m"
-            timestampString = "408375435.780926"
+            timestampString = "409141932.266096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "-handleClearCursorPathBtn:"
             landmarkType = "5">
          </BreakpointContent>
@@ -224,11 +224,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DPreferencesWindow.m"
-            timestampString = "408375435.780926"
+            timestampString = "409141932.266096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "-pathControl:willDisplayOpenPanel:"
             landmarkType = "5">
             <Locations>
@@ -270,11 +270,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DPreferencesWindow.m"
-            timestampString = "408375435.780926"
+            timestampString = "409141932.266096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "-pathControl:willDisplayOpenPanel:"
             landmarkType = "5">
          </BreakpointContent>
@@ -286,11 +286,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DAppDelegate.m"
-            timestampString = "408367138.745449"
+            timestampString = "409140945.925989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "-taskStopped"
             landmarkType = "5">
          </BreakpointContent>
@@ -302,12 +302,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DAppDelegate.m"
-            timestampString = "408375120.185418"
+            timestampString = "409142522.129869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "-startAppWithFile:"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "-startTask:withCWD:withArguments:withEnvironment:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -348,12 +348,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DAppDelegate.m"
-            timestampString = "408368400.612858"
+            timestampString = "409142522.129869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "-startAppWithFile:"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "-startTask:withCWD:withArguments:withEnvironment:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -394,12 +394,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DAppDelegate.m"
-            timestampString = "408375120.185418"
+            timestampString = "409142522.129869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "-startAppWithFile:"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
+            landmarkName = "-startTask:withCWD:withArguments:withEnvironment:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -440,12 +440,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DAppDelegate.m"
-            timestampString = "408368767.424095"
+            timestampString = "409142522.129869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "-startAppWithFile:"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "-startTask:withCWD:withArguments:withEnvironment:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -486,11 +486,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DAppDelegate.m"
-            timestampString = "408375120.185418"
+            timestampString = "409142522.129869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "-continueReading"
             landmarkType = "5">
          </BreakpointContent>
@@ -502,12 +502,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DAppDelegate.m"
-            timestampString = "408368767.424095"
+            timestampString = "409142522.129869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "-startAppWithFile:"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "-startTask:withCWD:withArguments:withEnvironment:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -518,12 +518,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DAppDelegate.m"
-            timestampString = "408368723.976209"
+            timestampString = "409142522.129869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "-startAppWithFile:"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "-startTask:withCWD:withArguments:withEnvironment:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -534,11 +534,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DPreferencesWindow.m"
-            timestampString = "408375435.780926"
+            timestampString = "409141932.266096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "-updateStereoEyeMappingPopup:"
             landmarkType = "5">
          </BreakpointContent>
@@ -550,11 +550,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Present3D/Present3D/P3DPreferencesWindow.m"
-            timestampString = "408375435.780926"
+            timestampString = "409141932.266096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-updateStereoEyeMappingPopup:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Present3D/Present3D/P3DPreferencesWindow.m"
+            timestampString = "409141932.266096"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-updateStereoEyeMappingPopup:"
             landmarkType = "5">
          </BreakpointContent>
@@ -565,13 +581,107 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Present3D/Present3D/P3DPreferencesWindow.m"
-            timestampString = "408375435.780926"
+            filePath = "Present3D/Present3D/P3DAppDelegate.m"
+            timestampString = "409142522.129869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "-updateStereoEyeMappingPopup:"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "-startTask:withCWD:withArguments:withEnvironment:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Present3D/Present3D/P3DAppDelegate.m"
+            timestampString = "409142522.129869"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "-startAppWithFile:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Present3D/Present3D/P3DAppDelegate.m"
+            timestampString = "409140945.925989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-startAppWithFile:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Present3D/Present3D/P3DAppDelegate.m"
+            timestampString = "409140945.925989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-convertFiles:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DAppDelegate convertFiles:]"
+                  moduleName = "Present3D"
+                  urlString = "file:///Volumes/Daten/dev/osx/present3d-app/Present3D/Present3D/P3DAppDelegate.m"
+                  timestampString = "409139504.895687"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "1972">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[P3DAppDelegate convertFiles:]"
+                  moduleName = "Present3D"
+                  urlString = "file:///Volumes/Daten/dev/osx/present3d-app/Present3D/Present3D/P3DAppDelegate.m"
+                  timestampString = "409139504.895878"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "2282">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Present3D/Present3D/P3DAppDelegate.m"
+            timestampString = "409140945.925989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-convertFiles:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

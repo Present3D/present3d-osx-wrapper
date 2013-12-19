@@ -26,6 +26,7 @@
 				<string>osgb</string>
 				<string>ive</string>
 				<string>osg</string>
+				<string>osgx</string>
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>OpenSceneGraph text file</string>

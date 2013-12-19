@@ -10,6 +10,7 @@
 
 #import "P3DPreferencesWindow.h"
 #import "P3DLogWindow.h"
+#import "P3DConvertFilesWindow.h"
 
 @interface P3DAppDelegate : NSObject <NSApplicationDelegate> {
 
@@ -19,10 +20,12 @@
 }
 
 -(IBAction) openFile: (id)sender;
+-(IBAction) convertFiles: (id)sender;
 -(IBAction) stopTask: (id)sender;
 -(IBAction) showLogOutput: (id)sender;
 -(IBAction) showPreferences: (id)sender;
 -(void) startAppWithFile: (NSURL*) file_name;
+-(void) startTask: (NSString*)file_path withCWD: (NSString*)cwd withArguments: (NSArray*)arguments withEnvironment: (NSDictionary*)envvars;
 -(void) taskStopped;
 -(void) revealLogWindow;
 -(BOOL) continueReading;
@@ -30,6 +33,7 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet P3DLogWindow *logWindow;
 @property (weak) IBOutlet P3DPreferencesWindow *prefWindow;
+@property (weak) IBOutlet P3DConvertFilesWindow *convertFilesWindow;
 @property (assign, nonatomic) BOOL checkPipe;
 
 

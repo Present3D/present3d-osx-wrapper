@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D45AA6FC1862ED6800D9F4EB /* P3DConvertFilesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D45AA6FB1862ED6800D9F4EB /* P3DConvertFilesWindow.m */; };
 		D4BEA2D7183A1ED500D55176 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BEA2D6183A1ED500D55176 /* Cocoa.framework */; };
 		D4BEA2E1183A1ED500D55176 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4BEA2DF183A1ED500D55176 /* InfoPlist.strings */; };
 		D4BEA2E3183A1ED500D55176 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BEA2E2183A1ED500D55176 /* main.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D45AA6FA1862ED6800D9F4EB /* P3DConvertFilesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P3DConvertFilesWindow.h; sourceTree = "<group>"; };
+		D45AA6FB1862ED6800D9F4EB /* P3DConvertFilesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P3DConvertFilesWindow.m; sourceTree = "<group>"; };
 		D4BEA2D3183A1ED500D55176 /* Present3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Present3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BEA2D6183A1ED500D55176 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D4BEA2D9183A1ED500D55176 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -134,6 +137,8 @@
 				D4FBA9D91843597800A0AE0A /* P3DLogWindow.m */,
 				D4FBA9DB184381FE00A0AE0A /* P3DPreferencesWindow.h */,
 				D4FBA9DC184381FE00A0AE0A /* P3DPreferencesWindow.m */,
+				D45AA6FA1862ED6800D9F4EB /* P3DConvertFilesWindow.h */,
+				D45AA6FB1862ED6800D9F4EB /* P3DConvertFilesWindow.m */,
 			);
 			path = Present3D;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				D4BEA2E3183A1ED500D55176 /* main.m in Sources */,
 				D4FBA9DD184381FE00A0AE0A /* P3DPreferencesWindow.m in Sources */,
 				D4FBA9DA1843597800A0AE0A /* P3DLogWindow.m in Sources */,
+				D45AA6FC1862ED6800D9F4EB /* P3DConvertFilesWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

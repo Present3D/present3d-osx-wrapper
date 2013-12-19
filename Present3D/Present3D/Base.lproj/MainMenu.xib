@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1080" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -87,6 +87,14 @@
                                 </menu>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="79">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Convert files…" keyEquivalent="C" id="p2c-EU-luM">
+                                <connections>
+                                    <action selector="convertFiles:" target="494" id="ELU-Sk-VDx"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="CaM-c7-r5C">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
                             <menuItem title="Close" keyEquivalent="w" id="73">
@@ -331,6 +339,7 @@
         </menu>
         <customObject id="494" customClass="P3DAppDelegate">
             <connections>
+                <outlet property="convertFilesWindow" destination="tip-f0-Fol" id="iGF-iJ-KCk"/>
                 <outlet property="logWindow" destination="KAi-6x-9AC" id="kuM-nV-anh"/>
                 <outlet property="prefWindow" destination="DQI-sx-KvI" id="B3c-vY-VWs"/>
             </connections>
@@ -338,7 +347,6 @@
         <customObject id="420" customClass="NSFontManager"/>
         <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="DQI-sx-KvI" customClass="P3DPreferencesWindow">
             <windowStyleMask key="styleMask" titled="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="476" height="290"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" id="6ar-x5-8ym">
@@ -599,13 +607,13 @@ Gw
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSv-u3-WOm">
                                             <rect key="frame" x="194" y="111" width="223" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <popUpButtonCell key="cell" type="push" title="LEFT_EYE_TOP_VIEWPORT" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" tag="2" imageScaling="proportionallyDown" inset="2" selectedItem="Nq2-rU-Xrv" id="9k4-Uq-n3D">
+                                            <popUpButtonCell key="cell" type="push" title="LEFT_EYE_TOP_VIEWPORT" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="2" imageScaling="proportionallyDown" inset="2" selectedItem="Nq2-rU-Xrv" id="9k4-Uq-n3D">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="menu"/>
                                                 <menu key="menu" title="OtherViews" id="okj-zD-iL8">
                                                     <items>
-                                                        <menuItem title="LEFT_EYE_TOP_VIEWPORT" tag="2" id="Nq2-rU-Xrv"/>
-                                                        <menuItem title="LEFT_EYE_BOTTOM_VIEWPORT" state="on" tag="2" id="Auo-Lu-ayh"/>
+                                                        <menuItem title="LEFT_EYE_TOP_VIEWPORT" state="on" tag="2" id="Nq2-rU-Xrv"/>
+                                                        <menuItem title="LEFT_EYE_BOTTOM_VIEWPORT" tag="2" id="Auo-Lu-ayh"/>
                                                     </items>
                                                 </menu>
                                             </popUpButtonCell>
@@ -613,6 +621,62 @@ Gw
                                                 <action selector="updateStereoEyeMappingPopup:" target="DQI-sx-KvI" id="hhG-99-MaB"/>
                                             </connections>
                                         </popUpButton>
+                                        <pathControl horizontalHuggingPriority="249" verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UOd-rD-0cO">
+                                            <rect key="frame" x="159" y="80" width="203" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="gmW-ZS-Woc">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="0.0" colorSpace="deviceRGB"/>
+                                            </pathCell>
+                                        </pathControl>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uqy-QP-71u">
+                                            <rect key="frame" x="15" y="85" width="116" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Left keystone file:" id="IdT-A6-6xo">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9sw-wg-PKN">
+                                            <rect key="frame" x="370" y="82" width="44" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="Clear" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8HW-ZJ-kHL">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="titleBar" size="12"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="handleClearLeftKeystoneFileBtn:" target="DQI-sx-KvI" id="IEE-43-RQq"/>
+                                            </connections>
+                                        </button>
+                                        <pathControl horizontalHuggingPriority="249" verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dz5-oV-G3Q">
+                                            <rect key="frame" x="159" y="55" width="203" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="LJ6-31-1sC">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="0.0" colorSpace="deviceRGB"/>
+                                            </pathCell>
+                                        </pathControl>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TC8-hT-6Vw">
+                                            <rect key="frame" x="15" y="60" width="125" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Right keystone file:" id="AeD-rb-g7M">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kY-oD-Dlq">
+                                            <rect key="frame" x="371" y="57" width="44" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="Clear" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zde-oJ-Oln">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="titleBar" size="12"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="handleClearRightKeystoneFileBtn:" target="DQI-sx-KvI" id="CMW-jp-kGh"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </tabViewItem>
@@ -662,17 +726,17 @@ Gw
                                             <rect key="frame" x="17" y="18" width="396" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <clipView key="contentView" ambiguous="YES" misplaced="YES" id="R4U-aX-RDr">
-                                                <rect key="frame" x="1" y="1" width="394" height="101"/>
+                                                <rect key="frame" x="1" y="1" width="379" height="101"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textView ambiguous="YES" importsGraphics="NO" richText="NO" findStyle="panel" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="3R0-VJ-0f8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="101"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="379" height="101"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="394" height="101"/>
+                                                        <size key="minSize" width="379" height="101"/>
                                                         <size key="maxSize" width="463" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="394" height="101"/>
+                                                        <size key="minSize" width="379" height="101"/>
                                                         <size key="maxSize" width="463" height="10000000"/>
                                                     </textView>
                                                 </subviews>
@@ -683,7 +747,7 @@ Gw
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="MXf-ko-03G">
-                                                <rect key="frame" x="379" y="1" width="16" height="101"/>
+                                                <rect key="frame" x="380" y="1" width="15" height="101"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
@@ -708,12 +772,14 @@ Gw
                 <outlet property="additonalCommandLineParametersTextView" destination="3R0-VJ-0f8" id="UBj-nZ-jWq"/>
                 <outlet property="addtionalCommandLineParametersTextView" destination="3R0-VJ-0f8" id="CvM-Em-aO8"/>
                 <outlet property="cursorModePopup" destination="xNx-sO-Tmb" id="x1I-XZ-agq"/>
+                <outlet property="leftKeystoneFile" destination="UOd-rD-0cO" id="j1D-LZ-n0H"/>
                 <outlet property="logLevelPopup" destination="elN-E2-0Wo" id="Jfw-vG-a0k"/>
                 <outlet property="menubarBehaviorPopup" destination="iOQ-iJ-zA1" id="fJ1-JH-O8D"/>
                 <outlet property="osgConfigPathControl" destination="8X8-9E-9IB" id="5bM-Pd-y9I"/>
                 <outlet property="osgCursorPathControl" destination="nZo-fh-W37" id="a5A-qS-dHa"/>
                 <outlet property="osgFilePathControl" destination="j8v-9B-Ego" id="7LB-qT-d0v"/>
                 <outlet property="p3dCursorPathControl" destination="nZo-fh-W37" id="BGi-aQ-vAO"/>
+                <outlet property="rightKeystoneFile" destination="Dz5-oV-G3Q" id="bij-8i-Oyg"/>
                 <outlet property="splitStereoHorizontalEyeMapping" destination="0fj-Ji-sIQ" id="L0y-o0-5rX"/>
                 <outlet property="splitStereoVerticalEyeMapping" destination="wSv-u3-WOm" id="89Z-0R-cHo"/>
                 <outlet property="stereoEyeMappingPopup" destination="0fj-Ji-sIQ" id="kbd-B0-Sql"/>
@@ -723,7 +789,7 @@ Gw
         <window title="Log Output" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="KAi-6x-9AC" customClass="P3DLogWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="575" height="333"/>
+            <rect key="contentRect" x="126" y="695" width="575" height="333"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <value key="minSize" type="size" width="575" height="333"/>
             <view key="contentView" id="Yel-5x-GmH">
@@ -734,14 +800,14 @@ Gw
                         <rect key="frame" x="-1" y="-1" width="577" height="335"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <clipView key="contentView" id="Qhs-6o-BrW">
-                            <rect key="frame" x="1" y="1" width="575" height="333"/>
+                            <rect key="frame" x="1" y="1" width="560" height="333"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="qRO-Bg-gdL">
-                                    <rect key="frame" x="0.0" y="0.0" width="575" height="333"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="560" height="333"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="575" height="333"/>
+                                    <size key="minSize" width="560" height="333"/>
                                     <size key="maxSize" width="577" height="10000000"/>
                                     <attributedString key="textStorage">
                                         <fragment content="vjj">
@@ -752,7 +818,7 @@ Gw
                                         </fragment>
                                     </attributedString>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="575" height="333"/>
+                                    <size key="minSize" width="560" height="333"/>
                                     <size key="maxSize" width="577" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -763,7 +829,7 @@ Gw
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="cnU-1A-QAs">
-                            <rect key="frame" x="560" y="1" width="16" height="333"/>
+                            <rect key="frame" x="561" y="1" width="15" height="333"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
@@ -777,6 +843,111 @@ Gw
             </view>
             <connections>
                 <outlet property="outputText" destination="qRO-Bg-gdL" id="yvw-w6-i8Q"/>
+            </connections>
+        </window>
+        <window title="Convert file …" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="tip-f0-Fol" customClass="P3DConvertFilesWindow">
+            <windowStyleMask key="styleMask" titled="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="267"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
+            <view key="contentView" id="Vba-ec-3r6">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="267"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wI5-UB-cgh">
+                        <rect key="frame" x="20" y="58" width="440" height="135"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <clipView key="contentView" ambiguous="YES" misplaced="YES" id="jb2-fE-voG">
+                            <rect key="frame" x="1" y="1" width="423" height="133"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView ambiguous="YES" importsGraphics="NO" richText="NO" findStyle="panel" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="7Sm-Q4-hdw">
+                                    <rect key="frame" x="0.0" y="0.0" width="423" height="133"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="423" height="133"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="423" height="133"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="abL-xz-Yas">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ieN-BD-epS">
+                            <rect key="frame" x="424" y="1" width="15" height="133"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sek-GU-lep">
+                        <rect key="frame" x="18" y="201" width="151" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Command line options:" id="Jjq-2I-heT">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BBf-P4-fZo">
+                        <rect key="frame" x="18" y="230" width="98" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Convert file to:" id="7C0-Yv-Rr1">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jg-ht-fBh">
+                        <rect key="frame" x="347" y="10" width="113" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Convert file" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qh5-gE-A5y">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="handleSaveAction:" target="tip-f0-Fol" id="6LV-6h-fxl"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WVh-TO-0Bd">
+                        <rect key="frame" x="265" y="10" width="82" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tYR-gS-zt3">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="handleCancelAction:" target="tip-f0-Fol" id="dxF-6Z-AIM"/>
+                        </connections>
+                    </button>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cP-LG-NjG">
+                        <rect key="frame" x="126" y="223" width="337" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="OpenSceneGraph Text (osgt)" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="1" imageScaling="proportionallyDown" inset="2" selectedItem="yJl-jF-Aq1" id="NnD-xv-J1c">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" title="OtherViews" id="vcm-dh-Pml">
+                                <items>
+                                    <menuItem title="OpenSceneGraph Text (osgt)" state="on" tag="1" id="yJl-jF-Aq1"/>
+                                    <menuItem title="OpenSceneGraph Binary (osgb)" tag="2" id="eci-Xe-pgH"/>
+                                    <menuItem title="OpenSceneGraph XML (osgx)" tag="3" id="FE9-g5-BOI"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                    </popUpButton>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="filetypePopup" destination="6cP-LG-NjG" id="aNI-XD-z7d"/>
+                <outlet property="optionalParameters" destination="7Sm-Q4-hdw" id="KSk-8V-HzU"/>
             </connections>
         </window>
     </objects>

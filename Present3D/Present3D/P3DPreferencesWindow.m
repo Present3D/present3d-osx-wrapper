@@ -40,10 +40,15 @@
     [_osgFilePathControl setURL: [self getOsgFilePath]];
     [_osgConfigPathControl setURL: [self getOsgConfigFile]];
     [_p3dCursorPathControl setURL: [self getP3DCursorFile]];
+    [_leftKeystoneFile setURL: [self getLeftKeystoneFile]];
+    [_rightKeystoneFile setURL: [self getRightKeystoneFile]];
     
     _osgFilePathControl.delegate = self;
     _osgConfigPathControl.delegate = self;
     _p3dCursorPathControl.delegate = self;
+    _leftKeystoneFile.delegate = self;
+    _rightKeystoneFile.delegate = self;
+    
 }
 
 
@@ -70,6 +75,10 @@
     [defaults setURL: _osgFilePathControl.URL forKey: @"OSG_FILE_PATH"];
     [defaults setURL: _osgConfigPathControl.URL forKey: @"OSG_CONFIG_FILE"];
     [defaults setURL: _p3dCursorPathControl.URL forKey: @"P3D_CURSOR"];
+    
+    [defaults setURL: _leftKeystoneFile.URL forKey: @"P3D_LEFT_KEYSTONE_FILE"];
+    [defaults setURL: _rightKeystoneFile.URL forKey: @"P3D_RIGHT_KEYSTONE_FILE"];
+    
 
     
     [defaults synchronize];
@@ -92,6 +101,18 @@
 {
     [_p3dCursorPathControl setURL: nil];
 }
+
+-(IBAction) handleClearLeftKeystoneFileBtn: (id)sender
+{
+    [_leftKeystoneFile setURL: nil];
+}
+
+
+-(IBAction) handleClearRightKeystoneFileBtn: (id)sender
+{
+    [_rightKeystoneFile setURL: nil];
+}
+
 
 -(IBAction) updateStereoEyeMappingPopup: (id)sender
 {
@@ -122,19 +143,24 @@
         NSArray *allowed_file_types = @[@"gif", @"jpg", @"png", @"tif", @"tiff"];
         [openPanel setAllowedFileTypes: allowed_file_types];
     }
+    else if((pathControl == _leftKeystoneFile) || (pathControl == _rightKeystoneFile))
+    {
+        NSArray *allowed_file_types = @[@"osgt", @"osgb", @"osgx"];
+        [openPanel setAllowedFileTypes: allowed_file_types];
+    }
 }
 
 
 #pragma mark -
 
--(NSString*) getSavedStringForKey:(NSString*) key default: (NSString*) default_value
++(NSString*) getSavedStringForKey:(NSString*) key default: (NSString*) default_value
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSString* value = [defaults stringForKey: key];
     return value ? value : default_value;
 }
 
--(NSURL*) getSavedURLForKey:(NSString*) key default: (NSURL*) default_value
++(NSURL*) getSavedURLForKey:(NSString*) key default: (NSURL*) default_value
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSURL* value = [defaults URLForKey: key];
@@ -144,52 +170,62 @@
 
 -(NSString*) getOsgNotifyLevel
 {
-    return [self getSavedStringForKey: @"OSG_NOTIFY_LEVEL" default: @"WARN"];
+    return [P3DPreferencesWindow getSavedStringForKey: @"OSG_NOTIFY_LEVEL" default: @"WARN"];
 }
 
 -(NSString*) getMenubarBehavior
 {
-    return [self getSavedStringForKey: @"OSG_MENUBAR_BEHAVIOR" default: @"AUTO_HIDE"];
+    return [P3DPreferencesWindow getSavedStringForKey: @"OSG_MENUBAR_BEHAVIOR" default: @"AUTO_HIDE"];
 }
 
 -(NSURL*) getOsgFilePath
 {
-    return [self getSavedURLForKey: @"OSG_FILE_PATH" default: nil];
+    return [P3DPreferencesWindow getSavedURLForKey: @"OSG_FILE_PATH" default: nil];
 }
 
 
 -(NSURL*) getOsgConfigFile
 {
-    return [self getSavedURLForKey: @"OSG_CONFIG_FILE" default: nil];
+    return [P3DPreferencesWindow getSavedURLForKey: @"OSG_CONFIG_FILE" default: nil];
 }
 
 -(NSURL*) getP3DCursorFile
 {
-    return [self getSavedURLForKey: @"P3D_CURSOR" default: nil];
+    return [P3DPreferencesWindow getSavedURLForKey: @"P3D_CURSOR" default: nil];
+}
+
+-(NSURL*) getLeftKeystoneFile
+{
+    return [P3DPreferencesWindow getSavedURLForKey: @"P3D_LEFT_KEYSTONE_FILE" default: nil];
+}
+
+-(NSURL*) getRightKeystoneFile
+{
+    return [P3DPreferencesWindow getSavedURLForKey: @"P3D_RIGHT_KEYSTONE_FILE" default: nil];
 }
 
 -(NSString*) getOsgStereoMode
 {
-    return [self getSavedStringForKey: @"OSG_STEREO_MODE" default: @"OFF"];
+    return [P3DPreferencesWindow getSavedStringForKey: @"OSG_STEREO_MODE" default: @"OFF"];
 }
 
 -(NSString*) getP3DCursorMode
 {
-    return [self getSavedStringForKey: @"P3D_SHOW_CURSOR" default: @"YES"];
+    return [P3DPreferencesWindow getSavedStringForKey: @"P3D_SHOW_CURSOR" default: @"YES"];
 }
 
 -(NSString*) getAdditionalCommandLineParameters
 {
-    return [self getSavedStringForKey: @"P3D_ADDITIONAL_COMMAND_LINE_PARAMETERS" default: @""];
+    return [P3DPreferencesWindow getSavedStringForKey: @"P3D_ADDITIONAL_COMMAND_LINE_PARAMETERS" default: @""];
 }
 
 -(NSString*) getOsgSplitStereoHorizontalEyeMapping
 {
-    return [self getSavedStringForKey: @"OSG_SPLIT_STEREO_HORIZONTAL_EYE_MAPPING" default: @"LEFT_EYE_LEFT_VIEWPORT"];
+    return [P3DPreferencesWindow getSavedStringForKey: @"OSG_SPLIT_STEREO_HORIZONTAL_EYE_MAPPING" default: @"LEFT_EYE_LEFT_VIEWPORT"];
 }
 
 -(NSString*) getOsgSplitStereoVerticalEyeMapping
 {
-    return [self getSavedStringForKey: @"OSG_SPLIT_STEREO_VERTICAL_EYE_MAPPING" default: @"LEFT_EYE_TOP_VIEWPORT"];
+    return [P3DPreferencesWindow getSavedStringForKey: @"OSG_SPLIT_STEREO_VERTICAL_EYE_MAPPING" default: @"LEFT_EYE_TOP_VIEWPORT"];
 }
 @end

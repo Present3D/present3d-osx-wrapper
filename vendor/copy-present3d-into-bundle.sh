@@ -19,6 +19,10 @@ cp -a *.framework ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Frameworks/
 cd ${ROOT}/osg-build/bin
 cp present3d ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/
 
+#copying osgconf
+cd ${ROOT}/osg-build/bin
+cp osgconv ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/
+
 # copy 3rdparty lubs
 
 cd ${ROOT}/libvnc-build/install/lib
