@@ -5,6 +5,7 @@ DCMTK_ROOT=${ROOT}/dcmtk-build/install
 LIBVNC_ROOT=${ROOT}/libvnc-build/install
 BOOST_ROOT=${ROOT}/boost-source
 ASIO_ROOT=${ROOT}/asio-source/asio/include
+LUA_ROOT=${ROOT}/lua-build/
 
 # create cmake-configuration for osg
 mkdir -p "${ROOT}/osg-build"
@@ -14,6 +15,7 @@ cd ${ROOT}/osg-build
 -D OSG_COMPILE_FRAMEWORKS_INSTALL_NAME_DIR:STRING=@executable_path/../Frameworks \
 -D OSG_WINDOWING_SYSTEM:STRING=Cocoa \
 -D OSG_BUILD_PLATFORM_IPHONE:BOOL=0 \
+-D OSG_BUILD_EXAMPLES:BOOL=1 \
 -D CMAKE_OSX_ARCHITECTURES:STRING=x86_64 \
 -D CMAKE_INSTALL_PREFIX="$ROOT/osg-build" \
 -D OSG_PLUGINS=osgPlugins \
@@ -38,6 +40,8 @@ cd ${ROOT}/osg-build
 -D LIBVNCCLIENT_LIBRARY:FILEPATH=${LIBVNC_ROOT}/lib/libvncclient.dylib \
 -D LIBVNCSERVER_LIBRARY:FILEPATH=${LIBVNC_ROOT}/lib/libvncserver.dylib \
 -D LIBVNCSERVER_INCLUDE_DIR:FILEPATH=${LIBVNC_ROOT}/include \
+-D LUA_LIBRARY:FILEPATH=${LUA_ROOT}/lib/liblua.dylib \
+-D LUA_INCLUDE_DIR:PATH=${LUA_ROOT}/include \
 -D CMAKE_OSX_SYSROOT:STRING=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk ../osg-source
 
 #build osg

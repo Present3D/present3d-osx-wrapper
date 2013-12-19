@@ -21,3 +21,5 @@ vendor/osg-build/*
 /vendor/jpeg-build/
 
 /Present3d.xcworkspace/xcshareddata/
+
+/vendor/lua-build/

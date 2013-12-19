@@ -13,3 +13,6 @@
 [submodule "vendor/boost-source"]
 	path = vendor/boost-source
 	url = https://github.com/michaelcontento/boost-mirror.git
+[submodule "vendor/lua-source"]
+	path = vendor/lua-source
+	url = https://github.com/LuaDist/lua

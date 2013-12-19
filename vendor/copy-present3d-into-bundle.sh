@@ -23,11 +23,14 @@ cp present3d ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/
 cd ${ROOT}/osg-build/bin
 cp osgconv ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/
 
-# copy 3rdparty lubs
+# copy 3rdparty libs
 
 cd ${ROOT}/libvnc-build/install/lib
 cp libvncclient.dylib ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Frameworks/
 
+cd ${ROOT}/lua-build/lib
+cp liblua.dylib ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Frameworks/
 
 #fix dependencies
 install_name_tool -change libvncclient.dylib @executable_path/../Frameworks/libvncclient.dylib  ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/osgPlugins-${OSG_VERSION}/osgdb_vnc.so
+install_name_tool -change @executable_path/../lib/liblua.dylib @executable_path/../Frameworks/liblua.dylib  ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/osgPlugins-${OSG_VERSION}/osgdb_lua.so
