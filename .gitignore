@@ -20,6 +20,9 @@ vendor/osg-build/*
 /vendor/jpeg-source/
 /vendor/jpeg-build/
 
+/vendor/freetype-source/
+/vendor/freetype-build/
+
 /Present3d.xcworkspace/xcshareddata/
 
 /vendor/lua-build/
