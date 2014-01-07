@@ -6,6 +6,7 @@ LIBVNC_ROOT=${ROOT}/libvnc-build/install
 BOOST_ROOT=${ROOT}/boost-source
 ASIO_ROOT=${ROOT}/asio-source/asio/include
 LUA_ROOT=${ROOT}/lua-build/
+FREETYPE_ROOT=${ROOT}/freetype-build/
 
 # create cmake-configuration for osg
 mkdir -p "${ROOT}/osg-build"
@@ -42,6 +43,9 @@ cd ${ROOT}/osg-build
 -D LIBVNCSERVER_INCLUDE_DIR:FILEPATH=${LIBVNC_ROOT}/include \
 -D LUA_LIBRARY:FILEPATH=${LUA_ROOT}/lib/liblua.dylib \
 -D LUA_INCLUDE_DIR:PATH=${LUA_ROOT}/include \
+-D FREETYPE_LIBRARY:FILEPATH=${FREETYPE_ROOT}/lib/libfreetype.6.dylib \
+-D FREETYPE_INCLUDE_DIR_freetype2:PATH=${FREETYPE_ROOT}/include/freetype2 \
+-D FREETYPE_INCLUDE_DIR_ft2build:PATH=${FREETYPE_ROOT}/include/freetype2 \
 -D CMAKE_OSX_SYSROOT:STRING=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk ../osg-source
 
 #build osg
