@@ -279,7 +279,7 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
+			shellPath = /bin/bash;
 			shellScript = "${PROJECT_DIR}/../vendor/copy-present3d-into-bundle.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
