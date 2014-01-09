@@ -12,7 +12,7 @@
 
 - (void) readPrefs
 {
-    NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+    // NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
 
     NSString* notify_level = [self getOsgNotifyLevel];
     [_logLevelPopup selectItemWithTitle: notify_level ];
@@ -111,6 +111,18 @@
 -(IBAction) handleClearRightKeystoneFileBtn: (id)sender
 {
     [_rightKeystoneFile setURL: nil];
+}
+
+
+-(IBAction) handleConfigurationFilePathControl: (id)sender
+{
+    [self handleClearLeftKeystoneFileBtn: sender];
+    [self handleClearRightKeystoneFileBtn: sender];
+}
+
+-(IBAction) handleKeystoneFilePathControl: (id)sender
+{
+    [self handleClearConfigPathBtn: sender];
 }
 
 

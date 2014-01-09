@@ -165,16 +165,16 @@
     if([_prefWindow getP3DCursorMode])
         [environment setValue: [_prefWindow getP3DCursorMode] forKey: @"P3D_SHOW_CURSOR"];
     
-    NSURL* keystone_files[2] = { [_prefWindow getLeftKeystoneFile], [_prefWindow getRightKeystoneFile]};
-    for(unsigned int i=0; i < 2; ++i)
-    {
-        if (!keystone_files[i])
-            continue;
+    
+    NSMutableArray* keystone_array = [[NSMutableArray alloc] init];
+    if([_prefWindow getLeftKeystoneFile])
+        [keystone_array addObject: [[_prefWindow getLeftKeystoneFile] path]];
+    if([_prefWindow getRightKeystoneFile])
+        [keystone_array addObject: [[_prefWindow getRightKeystoneFile] path]];
+
+    if(keystone_array.count > 0) {
         [environment setValue: @"ON" forKey:@"OSG_KEYSTONE"];
-        NSString* path = [keystone_files[i] path];
-        
-        [arguments addObject: @"--keystone"];
-        [arguments addObject: path];
+        [environment setValue: [keystone_array componentsJoinedByString:@":"] forKey:@"OSG_KEYSTONE_FILES"];
     }
     
     NSString* stereo_mode = [_prefWindow getOsgStereoMode];
@@ -206,6 +206,11 @@
 
 -(void) startTask: (NSString*)file_path withCWD: (NSString*)cwd withArguments: (NSArray*)arguments withEnvironment: (NSDictionary*)environment
 {
+    NSLog(@"file_path: %@", file_path);
+    NSLog(@"cwd: %@", cwd);
+    NSLog(@"arguments: %@", arguments);
+    NSLog(@"environment: %@", environment);
+    
     NSRunningApplication* my_app = [NSRunningApplication currentApplication];
 
     if (_task){

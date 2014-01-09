@@ -408,23 +408,6 @@ Gw
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8X8-9E-9IB">
-                                            <rect key="frame" x="159" y="141" width="203" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="3n4-Ba-eaN">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="0.0" colorSpace="deviceRGB"/>
-                                            </pathCell>
-                                        </pathControl>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JK1-VM-uaN">
-                                            <rect key="frame" x="16" y="145" width="119" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Configuration file:" id="zm6-fa-flN">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l8h-W2-SoX">
                                             <rect key="frame" x="371" y="168" width="44" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -436,19 +419,8 @@ Gw
                                                 <action selector="handleClearFilePathBtn:" target="DQI-sx-KvI" id="Pex-JD-f48"/>
                                             </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IM6-2J-KbD">
-                                            <rect key="frame" x="371" y="142" width="44" height="19"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="roundRect" title="Clear" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kub-qV-PjX">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="cellTitle"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="handleClearConfigPathBtn:" target="DQI-sx-KvI" id="Skr-ly-yIq"/>
-                                            </connections>
-                                        </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OS7-gB-zbX">
-                                            <rect key="frame" x="17" y="70" width="87" height="17"/>
+                                            <rect key="frame" x="16" y="96" width="87" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Show Cursor:" id="Vud-6Q-Y58">
                                                 <font key="font" metaFont="system"/>
@@ -457,7 +429,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xNx-sO-Tmb">
-                                            <rect key="frame" x="162" y="63" width="257" height="26"/>
+                                            <rect key="frame" x="161" y="89" width="257" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="koL-gf-aJc">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -471,7 +443,7 @@ Gw
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tA8-ev-1vy">
-                                            <rect key="frame" x="17" y="95" width="122" height="17"/>
+                                            <rect key="frame" x="16" y="121" width="122" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Menubar behavior:" id="Kho-2A-Z70">
                                                 <font key="font" metaFont="system"/>
@@ -480,14 +452,14 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOQ-iJ-zA1">
-                                            <rect key="frame" x="162" y="89" width="257" height="26"/>
+                                            <rect key="frame" x="161" y="115" width="257" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <popUpButtonCell key="cell" type="push" title="AUTO_HIDE" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="YsB-ZV-JE1" id="kZ4-nQ-e5y">
+                                            <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="kZ4-nQ-e5y">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="menu"/>
                                                 <menu key="menu" title="OtherViews" id="9Re-be-hPc">
                                                     <items>
-                                                        <menuItem title="AUTO_HIDE" state="on" id="YsB-ZV-JE1"/>
+                                                        <menuItem title="AUTO_HIDE" id="YsB-ZV-JE1"/>
                                                         <menuItem title="FORCE_HIDE" id="uQT-fh-rwj"/>
                                                         <menuItem title="FORCE_SHOW" id="4IH-yW-BP7"/>
                                                     </items>
@@ -495,7 +467,7 @@ Gw
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZo-fh-W37">
-                                            <rect key="frame" x="160" y="40" width="203" height="22"/>
+                                            <rect key="frame" x="160" y="66" width="203" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="X0L-w1-XCj">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -503,7 +475,7 @@ Gw
                                             </pathCell>
                                         </pathControl>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54Q-Gj-CAL">
-                                            <rect key="frame" x="17" y="44" width="74" height="17"/>
+                                            <rect key="frame" x="16" y="70" width="74" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Cursor file:" id="kSO-Lj-LvJ">
                                                 <font key="font" metaFont="system"/>
@@ -512,7 +484,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U60-Rn-9WY">
-                                            <rect key="frame" x="372" y="41" width="44" height="19"/>
+                                            <rect key="frame" x="371" y="67" width="44" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="roundRect" title="Clear" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sna-Tb-kmc">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -523,7 +495,7 @@ Gw
                                             </connections>
                                         </button>
                                         <box autoresizesSubviews="NO" horizontalHuggingPriority="249" verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Riv-JD-JOi">
-                                            <rect key="frame" x="18" y="127" width="398" height="5"/>
+                                            <rect key="frame" x="17" y="153" width="398" height="5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -532,7 +504,7 @@ Gw
                                     </subviews>
                                 </view>
                             </tabViewItem>
-                            <tabViewItem label="Stereo" identifier="2" id="soI-jl-DsZ">
+                            <tabViewItem label="Display / Stereo" identifier="2" id="soI-jl-DsZ">
                                 <view key="view" id="1Kg-0M-xjf">
                                     <rect key="frame" x="10" y="33" width="430" height="197"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -628,6 +600,9 @@ Gw
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="0.0" colorSpace="deviceRGB"/>
                                             </pathCell>
+                                            <connections>
+                                                <action selector="handleKeystoneFilePathControl:" target="DQI-sx-KvI" id="yd2-tp-mif"/>
+                                            </connections>
                                         </pathControl>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uqy-QP-71u">
                                             <rect key="frame" x="15" y="85" width="116" height="17"/>
@@ -639,11 +614,11 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9sw-wg-PKN">
-                                            <rect key="frame" x="370" y="82" width="44" height="19"/>
+                                            <rect key="frame" x="371" y="82" width="44" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="roundRect" title="Clear" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8HW-ZJ-kHL">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="titleBar" size="12"/>
+                                                <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="handleClearLeftKeystoneFileBtn:" target="DQI-sx-KvI" id="IEE-43-RQq"/>
@@ -656,6 +631,9 @@ Gw
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="0.0" colorSpace="deviceRGB"/>
                                             </pathCell>
+                                            <connections>
+                                                <action selector="handleKeystoneFilePathControl:" target="DQI-sx-KvI" id="78L-Qh-Dxi"/>
+                                            </connections>
                                         </pathControl>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TC8-hT-6Vw">
                                             <rect key="frame" x="15" y="60" width="125" height="17"/>
@@ -671,10 +649,41 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="roundRect" title="Clear" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zde-oJ-Oln">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="titleBar" size="12"/>
+                                                <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="handleClearRightKeystoneFileBtn:" target="DQI-sx-KvI" id="CMW-jp-kGh"/>
+                                            </connections>
+                                        </button>
+                                        <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8X8-9E-9IB">
+                                            <rect key="frame" x="159" y="31" width="203" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="3n4-Ba-eaN">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="0.0" colorSpace="deviceRGB"/>
+                                            </pathCell>
+                                            <connections>
+                                                <action selector="handleConfigurationFilePathControl:" target="DQI-sx-KvI" id="9aw-SM-NhN"/>
+                                            </connections>
+                                        </pathControl>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JK1-VM-uaN">
+                                            <rect key="frame" x="15" y="35" width="119" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Configuration file:" id="zm6-fa-flN">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IM6-2J-KbD">
+                                            <rect key="frame" x="371" y="32" width="44" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="Clear" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kub-qV-PjX">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="cellTitle"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="handleClearConfigPathBtn:" target="DQI-sx-KvI" id="Skr-ly-yIq"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -747,7 +756,7 @@ Gw
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="MXf-ko-03G">
-                                                <rect key="frame" x="380" y="1" width="15" height="101"/>
+                                                <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
@@ -878,7 +887,7 @@ Gw
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ieN-BD-epS">
-                            <rect key="frame" x="424" y="1" width="15" height="133"/>
+                            <rect key="frame" x="1" y="1" width="15" height="0.0"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>

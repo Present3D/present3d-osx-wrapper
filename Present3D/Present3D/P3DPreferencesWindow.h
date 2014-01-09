@@ -36,6 +36,10 @@
 -(IBAction) handleCancelAction: (id)sender;
 -(IBAction) handleSaveAction: (id)sender;
 
+-(IBAction) handleConfigurationFilePathControl: (id)sender;
+-(IBAction) handleKeystoneFilePathControl: (id)sender;
+
+
 -(IBAction) handleClearFilePathBtn: (id)sender;
 -(IBAction) handleClearConfigPathBtn: (id)sender;
 -(IBAction) handleClearCursorPathBtn: (id)sender;
