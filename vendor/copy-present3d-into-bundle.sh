@@ -37,8 +37,14 @@ cd ${ROOT}/osg-build/bin
 cp present3d "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/"
 
 # copying osgconf
-cd ${ROOT}/osg-build/bin
 cp osgconv "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/"
+
+# copying osgversion
+cp osgversion "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/"
+
+# copying osgvolume
+cd ${ROOT}/osg-build/share/OpenSceneGraph/bin
+cp osgvolume "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/"
 
 # copy 3rdparty libs
 
