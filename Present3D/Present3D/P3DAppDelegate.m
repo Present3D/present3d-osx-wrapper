@@ -91,13 +91,52 @@
     [arguments addObject:target_file_name];
     
     NSMutableDictionary* environment = [[NSMutableDictionary alloc] init];
-    [environment setValue: [_prefWindow getOsgNotifyLevel] forKey: @"OSG_NOTIFY_LEVEL"];
-    [environment setValue: [bundle builtInPlugInsPath] forKey: @"OSG_LIBRARY_PATH"];
+    
+    [self setCommonEnvironment: environment];
 
     
     [self startTask: launchPath  withCWD:nil withArguments:arguments withEnvironment: environment];
     
 }
+
+
+-(IBAction) runScript: (id)sender {
+    
+    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+	[openDlg setCanChooseFiles:YES];
+	
+    NSMutableArray* file_types_nsarray = [[NSMutableArray alloc] init];
+    [file_types_nsarray addObject: @"sh"];
+    [file_types_nsarray addObject: @"tcsh"];
+    
+    [openDlg setAllowedFileTypes: file_types_nsarray];
+    [openDlg setAllowsMultipleSelection: FALSE];
+    
+	if ([openDlg runModal] != NSOKButton)
+	{
+		return;
+	}
+    
+    
+    [self showLogOutput: self];
+    
+    NSURL* file_name_url = [[openDlg URLs] objectAtIndex:0];
+    NSString* file_name_path = [file_name_url path];
+    NSString* launchPath =  @"/bin/tcsh";
+    NSString* parent_folder = [file_name_path  stringByDeletingLastPathComponent];
+
+    
+    NSMutableArray* arguments = [[NSMutableArray alloc] init];
+    [arguments addObject: file_name_path];
+    
+    NSMutableDictionary* environment = [[NSMutableDictionary alloc] init];
+    
+    [self setCommonEnvironment: environment];
+    
+    [self startTask: launchPath  withCWD:parent_folder withArguments:arguments withEnvironment: environment];
+    
+}
+
 
 
 -(IBAction) stopTask: (id)sender {
@@ -150,7 +189,6 @@
     NSMutableDictionary* environment = [[NSMutableDictionary alloc] init];
         // [environment setValue: @"100 100 800 600" forKey: @"OSG_WINDOW"];
     
-    [environment setValue: [_prefWindow getOsgNotifyLevel] forKey: @"OSG_NOTIFY_LEVEL"];
     [environment setValue: [_prefWindow getMenubarBehavior] forKey: @"OSG_MENUBAR_BEHAVIOR"];
 
     if([_prefWindow getOsgFilePath])
@@ -196,10 +234,22 @@
     // NSLog(@"Arguments: %@", arguments);
     // NSLog(@"Environment: %@", environment);
     
-    [environment setValue: [bundle builtInPlugInsPath] forKey: @"OSG_LIBRARY_PATH"];
+    [self setCommonEnvironment: environment];
 
     
     [self startTask: launchPath withCWD: parent_folder withArguments: arguments withEnvironment: environment];
+}
+
+
+-(void) setCommonEnvironment: (NSMutableDictionary*)environment
+{
+
+    NSBundle* bundle = [NSBundle mainBundle];
+    [environment setValue: [bundle builtInPlugInsPath] forKey: @"OSG_LIBRARY_PATH"];
+    [environment setValue: [bundle builtInPlugInsPath] forKey: @"OSG_BINARY_PATH"];
+    
+    [environment setValue: [_prefWindow getOsgNotifyLevel] forKey: @"OSG_NOTIFY_LEVEL"];
+
 }
 
 
@@ -232,18 +282,19 @@
     BlockWeakSelf weakSelf = self;
 
     _notification = [[NSNotificationCenter defaultCenter] addObserverForName:NSFileHandleDataAvailableNotification object:[_pipe fileHandleForReading] queue:nil usingBlock:^(NSNotification *notification){
-        
-        NSData *output = [[_pipe fileHandleForReading] availableData];
-        NSString *outStr = [[NSString alloc] initWithData:output encoding:NSUTF8StringEncoding];
-        
-        if(outStr.length > 0)
-        {
-            [self appendToLog: outStr];
-        }
-        BOOL continue_reading = [weakSelf continueReading];
-        if ((output.length > 0) || continue_reading)
-        {
-            [[_pipe fileHandleForReading] waitForDataInBackgroundAndNotify];
+        @autoreleasepool {
+            NSData *output = [[_pipe fileHandleForReading] availableData];
+            NSString *outStr = [[NSString alloc] initWithData:output encoding:NSUTF8StringEncoding];
+            
+            if(outStr.length > 0)
+            {
+                [self appendToLog: outStr];
+            }
+            BOOL continue_reading = [weakSelf continueReading];
+            if ((output.length > 0) || continue_reading)
+            {
+                [[_pipe fileHandleForReading] waitForDataInBackgroundAndNotify];
+            }
         }
     }];
     
@@ -266,12 +317,24 @@
 
 -(void) appendToLog: (NSString*)outStr
 {
-    [self.logWindow.outputText setFont:[NSFont userFixedPitchFontOfSize:0.0]];
-    self.logWindow.outputText.string = [self.logWindow.outputText.string stringByAppendingString:[NSString stringWithFormat:@"\n%@", outStr]];
-    // Scroll to end of outputText field
-    NSRange range;
-    range = NSMakeRange([self.logWindow.outputText.string length], 0);
-    [self.logWindow.outputText scrollRangeToVisible:range];
+    static unsigned int max_length = 1024*1024;
+    
+    
+    @autoreleasepool {
+        NSString* new_log = [self.logWindow.outputText.string stringByAppendingString:[NSString stringWithFormat:@"\n%@", outStr]];
+        
+        if (new_log.length > max_length) {
+            new_log = [new_log substringFromIndex: new_log.length - max_length];
+        }
+        
+        
+        [self.logWindow.outputText setFont:[NSFont userFixedPitchFontOfSize:0.0]];
+        self.logWindow.outputText.string = new_log;
+        // Scroll to end of outputText field
+        NSRange range;
+        range = NSMakeRange([self.logWindow.outputText.string length], 0);
+        [self.logWindow.outputText scrollRangeToVisible:range];
+    }
 }
 
 -(BOOL)continueReading {

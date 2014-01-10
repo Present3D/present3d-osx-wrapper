@@ -21,6 +21,7 @@
 
 -(IBAction) openFile: (id)sender;
 -(IBAction) convertFiles: (id)sender;
+-(IBAction) runScript: (id)sender;
 -(IBAction) stopTask: (id)sender;
 -(IBAction) showLogOutput: (id)sender;
 -(IBAction) showPreferences: (id)sender;

@@ -89,9 +89,14 @@
                             <menuItem isSeparatorItem="YES" id="79">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Convert files…" keyEquivalent="C" id="p2c-EU-luM">
+                            <menuItem title="Convert File…" keyEquivalent="C" id="p2c-EU-luM">
                                 <connections>
                                     <action selector="convertFiles:" target="494" id="ELU-Sk-VDx"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Run Script…" keyEquivalent="R" id="lUp-hM-8Qh">
+                                <connections>
+                                    <action selector="runScript:" target="494" id="ayP-ku-7Wq"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="CaM-c7-r5C">
