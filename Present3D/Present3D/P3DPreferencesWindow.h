@@ -16,6 +16,7 @@
 @property IBOutlet NSPopUpButton *menubarBehaviorPopup;
 @property IBOutlet NSPopUpButton *stereoModePopup;
 @property IBOutlet NSPopUpButton *cursorModePopup;
+@property IBOutlet NSPopUpButton *screenNumPopup;
 @property IBOutlet NSPopUpButton *splitStereoHorizontalEyeMapping;
 @property IBOutlet NSPopUpButton *splitStereoVerticalEyeMapping;
 @property IBOutlet NSTextView *additonalCommandLineParametersTextView;
@@ -55,6 +56,7 @@
 -(NSString*) getOsgNotifyLevel;
 -(NSString*) getMenubarBehavior;
 -(NSString*) getOsgStereoMode;
+-(NSString*) getOsgScreen;
 -(NSURL*) getOsgFilePath;
 -(NSURL*) getOsgConfigFile;
 -(NSURL*) getP3DCursorFile;

@@ -203,6 +203,11 @@
     if([_prefWindow getP3DCursorMode])
         [environment setValue: [_prefWindow getP3DCursorMode] forKey: @"P3D_SHOW_CURSOR"];
     
+    if([_prefWindow getOsgScreen]) {
+        NSString* osg_screen = [_prefWindow getOsgScreen];
+        if (![osg_screen isEqualToString:@"All"])
+            [environment setValue: osg_screen forKey: @"OSG_SCREEN"];
+    }
     
     NSMutableArray* keystone_array = [[NSMutableArray alloc] init];
     if([_prefWindow getLeftKeystoneFile])

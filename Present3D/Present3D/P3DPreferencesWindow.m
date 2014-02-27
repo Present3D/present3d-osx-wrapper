@@ -12,7 +12,7 @@
 
 - (void) readPrefs
 {
-    // NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+    NSLog(@"%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
 
     NSString* notify_level = [self getOsgNotifyLevel];
     [_logLevelPopup selectItemWithTitle: notify_level ];
@@ -49,6 +49,15 @@
     _leftKeystoneFile.delegate = self;
     _rightKeystoneFile.delegate = self;
     
+    unsigned int num_screens = [[NSScreen screens] count];
+    
+    _screenNumPopup.enabled = (num_screens > 1);
+    [_screenNumPopup addItemWithTitle: @"All"];
+    
+    for(unsigned int i = 0; i < num_screens; i++) {
+        [_screenNumPopup addItemWithTitle: [NSString stringWithFormat:@"%d", i]];
+    }
+    [_screenNumPopup selectItemWithTitle: [self getOsgScreen]];
 }
 
 
@@ -66,6 +75,8 @@
    
     [defaults setValue: _logLevelPopup.titleOfSelectedItem forKey: @"OSG_NOTIFY_LEVEL"];
     [defaults setValue: _menubarBehaviorPopup.titleOfSelectedItem forKey: @"OSG_MENUBAR_BEHAVIOR"];
+    [defaults setValue: _screenNumPopup.titleOfSelectedItem forKey: @"OSG_SCREEN"];
+    
     [defaults setValue: _stereoModePopup.titleOfSelectedItem forKey: @"OSG_STEREO_MODE"];
     [defaults setValue: _cursorModePopup.titleOfSelectedItem forKey: @"P3D_SHOW_CURSOR"];
     [defaults setValue: _additonalCommandLineParametersTextView.string forKey: @"P3D_ADDITIONAL_COMMAND_LINE_PARAMETERS"];
@@ -188,6 +199,11 @@
 -(NSString*) getMenubarBehavior
 {
     return [P3DPreferencesWindow getSavedStringForKey: @"OSG_MENUBAR_BEHAVIOR" default: @"AUTO_HIDE"];
+}
+
+-(NSString*) getOsgScreen
+{
+    return [P3DPreferencesWindow getSavedStringForKey: @"OSG_SCREEN" default: @"All"];
 }
 
 -(NSURL*) getOsgFilePath
