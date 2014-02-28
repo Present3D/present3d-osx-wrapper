@@ -744,11 +744,11 @@ Gw
                             </tabViewItem>
                             <tabViewItem label="Advanced" identifier="2" id="3gh-nZ-xqQ">
                                 <view key="view" id="ynE-hh-zvl">
-                                    <rect key="frame" x="10" y="33" width="430" height="213"/>
+                                    <rect key="frame" x="10" y="33" width="430" height="236"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7x6-Wa-HNa">
-                                            <rect key="frame" x="15" y="184" width="83" height="17"/>
+                                            <rect key="frame" x="15" y="207" width="83" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Debug level:" id="QpA-2b-j7V">
                                                 <font key="font" metaFont="system"/>
@@ -757,7 +757,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLi-qZ-6V2">
-                                            <rect key="frame" x="15" y="145" width="245" height="17"/>
+                                            <rect key="frame" x="15" y="168" width="245" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Additional command-line parameters:" id="zZR-wV-2m3">
                                                 <font key="font" metaFont="system"/>
@@ -766,7 +766,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elN-E2-0Wo">
-                                            <rect key="frame" x="160" y="179" width="257" height="26"/>
+                                            <rect key="frame" x="160" y="202" width="257" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="WARN" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="0Ko-mE-3kV" id="Gkv-3W-SsF">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -785,20 +785,20 @@ Gw
                                             </popUpButtonCell>
                                         </popUpButton>
                                         <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngW-av-q7m">
-                                            <rect key="frame" x="17" y="18" width="396" height="103"/>
+                                            <rect key="frame" x="17" y="18" width="396" height="142"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <clipView key="contentView" ambiguous="YES" misplaced="YES" id="R4U-aX-RDr">
-                                                <rect key="frame" x="1" y="1" width="394" height="101"/>
+                                                <rect key="frame" x="1" y="1" width="394" height="140"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textView ambiguous="YES" importsGraphics="NO" richText="NO" findStyle="panel" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="3R0-VJ-0f8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="101"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="140"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="394" height="101"/>
+                                                        <size key="minSize" width="394" height="140"/>
                                                         <size key="maxSize" width="463" height="10000000"/>
                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="394" height="101"/>
+                                                        <size key="minSize" width="394" height="140"/>
                                                         <size key="maxSize" width="463" height="10000000"/>
                                                     </textView>
                                                 </subviews>
@@ -809,7 +809,7 @@ Gw
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="MXf-ko-03G">
-                                                <rect key="frame" x="379" y="1" width="16" height="101"/>
+                                                <rect key="frame" x="379" y="1" width="16" height="140"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
@@ -941,7 +941,7 @@ Gw
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ieN-BD-epS">
-                            <rect key="frame" x="-15" y="1" width="16" height="0.0"/>
+                            <rect key="frame" x="423" y="1" width="16" height="133"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
