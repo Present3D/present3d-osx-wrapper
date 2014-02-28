@@ -629,12 +629,12 @@ Gw
                                             <font key="font" metaFont="system"/>
                                             <tabViewItems>
                                                 <tabViewItem label="Configuration file" identifier="1" id="hGm-iP-pdP">
-                                                    <view key="view" id="6IY-IO-TnU">
-                                                        <rect key="frame" x="10" y="33" width="432" height="74"/>
+                                                    <view key="view" ambiguous="YES" id="6IY-IO-TnU">
+                                                        <rect key="frame" x="10" y="33" width="142" height="0.0"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8X8-9E-9IB">
-                                                                <rect key="frame" x="163" y="47" width="203" height="22"/>
+                                                                <rect key="frame" x="163" y="-27" width="203" height="22"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="3n4-Ba-eaN">
                                                                     <font key="font" metaFont="smallSystem"/>
@@ -645,7 +645,7 @@ Gw
                                                                 </connections>
                                                             </pathControl>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JK1-VM-uaN">
-                                                                <rect key="frame" x="15" y="50" width="119" height="17"/>
+                                                                <rect key="frame" x="15" y="-24" width="119" height="17"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Configuration file:" id="zm6-fa-flN">
                                                                     <font key="font" metaFont="system"/>
@@ -654,7 +654,7 @@ Gw
                                                                 </textFieldCell>
                                                             </textField>
                                                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IM6-2J-KbD">
-                                                                <rect key="frame" x="371" y="49" width="44" height="19"/>
+                                                                <rect key="frame" x="371" y="-25" width="44" height="19"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <buttonCell key="cell" type="roundRect" title="Clear" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kub-qV-PjX">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -668,7 +668,7 @@ Gw
                                                     </view>
                                                 </tabViewItem>
                                                 <tabViewItem label="Keystone files" identifier="2" id="j2U-Rs-pX5">
-                                                    <view key="view" ambiguous="YES" id="id5-Gp-Nmu">
+                                                    <view key="view" id="id5-Gp-Nmu">
                                                         <rect key="frame" x="10" y="33" width="432" height="74"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
@@ -941,7 +941,7 @@ Gw
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ieN-BD-epS">
-                            <rect key="frame" x="423" y="1" width="16" height="133"/>
+                            <rect key="frame" x="-15" y="1" width="16" height="0.0"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
