@@ -13,6 +13,14 @@
 
 @implementation P3DAppDelegate
 
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification
+{
+    // Insert code here to initialize your application
+    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
+
+}
+
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
@@ -21,6 +29,14 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification
 {
     [self stopTask: self];
+}
+
+- (void)handleURLEvent:(NSAppleEventDescriptor*)event withReplyEvent:(NSAppleEventDescriptor*)replyEvent
+{
+    NSString* url = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
+
+    url = [url stringByReplacingOccurrencesOfString:@"present3d" withString: @"http"];
+    [self startAppWithFile: [[NSURL alloc] initWithString: url]];
 }
 
 -(IBAction) openFile: (id)sender {
@@ -166,19 +182,26 @@
 
 
 
+
+
+
 -(void) startAppWithFile: (NSURL*) file_name
 {
+    bool is_file = [file_name isFileURL];
     
     [[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:file_name];
     NSLog(@"Start app with: %@", file_name);
     
-    NSString* parent_folder = [[file_name path] stringByDeletingLastPathComponent];
+    NSString* parent_folder = is_file ? [[file_name path] stringByDeletingLastPathComponent] : nil;
     
     NSBundle* bundle = [NSBundle mainBundle];
     NSString* launchPath = [[bundle builtInPlugInsPath]  stringByAppendingString: @"/present3d"];
     
     NSMutableArray* arguments = [[NSMutableArray alloc] init];
-    [arguments addObject: [file_name path]];
+    if (is_file)
+        [arguments addObject: [file_name path]];
+    else
+        [arguments addObject: [file_name absoluteString]];
     
     if([_prefWindow getAdditionalCommandLineParameters])
         [arguments addObject:[_prefWindow getAdditionalCommandLineParameters]];
