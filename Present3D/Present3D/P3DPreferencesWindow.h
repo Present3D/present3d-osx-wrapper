@@ -20,6 +20,7 @@
 @property IBOutlet NSPopUpButton *splitStereoHorizontalEyeMapping;
 @property IBOutlet NSPopUpButton *splitStereoVerticalEyeMapping;
 @property IBOutlet NSTextView *additonalCommandLineParametersTextView;
+@property IBOutlet NSTextView *additonalEnvVarsTextView;
 
 @property IBOutlet NSPathControl *osgFilePathControl;
 @property IBOutlet NSPathControl *osgConfigPathControl;
@@ -62,6 +63,7 @@
 -(NSURL*) getP3DCursorFile;
 -(NSString*)getP3DCursorMode;
 -(NSString*)getAdditionalCommandLineParameters;
+-(NSString*)getAdditionalEnvVars;
 -(NSString*) getOsgSplitStereoHorizontalEyeMapping;
 -(NSString*) getOsgSplitStereoVerticalEyeMapping;
 -(NSURL*) getLeftKeystoneFile;

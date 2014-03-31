@@ -37,6 +37,12 @@
     _additonalCommandLineParametersTextView.automaticQuoteSubstitutionEnabled = NO;
     [_additonalCommandLineParametersTextView setEnabledTextCheckingTypes: 0];
     
+    NSString* add_env_vars = [self getAdditionalEnvVars];
+    [_additonalEnvVarsTextView setString: add_env_vars];
+    
+    _additonalEnvVarsTextView.automaticQuoteSubstitutionEnabled = NO;
+    [_additonalEnvVarsTextView setEnabledTextCheckingTypes: 0];
+    
     [_osgFilePathControl setURL: [self getOsgFilePath]];
     [_osgConfigPathControl setURL: [self getOsgConfigFile]];
     [_p3dCursorPathControl setURL: [self getP3DCursorFile]];
@@ -80,6 +86,7 @@
     [defaults setValue: _stereoModePopup.titleOfSelectedItem forKey: @"OSG_STEREO_MODE"];
     [defaults setValue: _cursorModePopup.titleOfSelectedItem forKey: @"P3D_SHOW_CURSOR"];
     [defaults setValue: _additonalCommandLineParametersTextView.string forKey: @"P3D_ADDITIONAL_COMMAND_LINE_PARAMETERS"];
+    [defaults setValue: _additonalEnvVarsTextView.string forKey: @"P3D_ADDITIONAL_ENV_VARS"];
     [defaults setValue: _splitStereoHorizontalEyeMapping.titleOfSelectedItem forKey: @"OSG_SPLIT_STEREO_HORIZONTAL_EYE_MAPPING"];
     [defaults setValue: _splitStereoVerticalEyeMapping.titleOfSelectedItem forKey: @"OSG_SPLIT_STEREO_VERTICAL_EYE_MAPPING"];
     
@@ -245,6 +252,11 @@
 -(NSString*) getAdditionalCommandLineParameters
 {
     return [P3DPreferencesWindow getSavedStringForKey: @"P3D_ADDITIONAL_COMMAND_LINE_PARAMETERS" default: @""];
+}
+
+-(NSString*) getAdditionalEnvVars
+{
+    return [P3DPreferencesWindow getSavedStringForKey: @"P3D_ADDITIONAL_ENV_VARS" default: @""];
 }
 
 -(NSString*) getOsgSplitStereoHorizontalEyeMapping

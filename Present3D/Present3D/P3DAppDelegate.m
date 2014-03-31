@@ -205,12 +205,23 @@
     
     if([_prefWindow getAdditionalCommandLineParameters])
         [arguments addObject:[_prefWindow getAdditionalCommandLineParameters]];
-        
+    
+    
     //[arguments addObject: @"--help"];
-
+    
     
     NSMutableDictionary* environment = [[NSMutableDictionary alloc] init];
-        // [environment setValue: @"100 100 800 600" forKey: @"OSG_WINDOW"];
+    
+    NSDictionary* default_env_vars = @{
+        @"OSG_SCREEN_DISTANCE" : @"2.5",
+        @"OSG_SCREEN_HEIGHT"   : @"1.8",
+        @"OSG_SCREEN_WIDTH"    : @"2.4",
+        @"OSG_EYE_SEPARATION"  : @"0.06",
+    };
+    
+    for (id key_env_var in default_env_vars) {
+        [environment setValue: default_env_vars[key_env_var] forKey: key_env_var];
+    }
     
     [environment setValue: [_prefWindow getMenubarBehavior] forKey: @"OSG_MENUBAR_BEHAVIOR"];
 
@@ -257,6 +268,24 @@
     else
     {
         [environment setValue: @"OFF" forKey: @"OSG_STEREO"];
+    }
+    
+    NSString* additional_env_vars = [_prefWindow getAdditionalEnvVars];
+    
+    if(additional_env_vars.length > 0) {
+        NSArray *chunks = [additional_env_vars componentsSeparatedByString:@"\n"];
+        
+        for(unsigned int i = 0; i < [chunks count]; ++i) {
+
+            NSString* line = chunks[i];
+            if ([line rangeOfString:@"="].location != NSNotFound) {
+                NSArray* subchunks = [line componentsSeparatedByString:@"="];
+                NSString* left = [subchunks[0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                NSString* right = [subchunks[1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                NSLog(@"%@ = %@", left, right);
+                [environment setValue: right forKey: left];
+            }
+        }
     }
     
     // NSLog(@"Arguments: %@", arguments);

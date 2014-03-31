@@ -2,7 +2,7 @@
 
 # adapt to your needs
 
-OSG_VERSION="3.3.1"
+OSG_VERSION="3.3.2"
 
 
 function get_realpath() {
