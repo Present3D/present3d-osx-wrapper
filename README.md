@@ -23,5 +23,8 @@ Installation
 2. init + update the submodules
         git submodule init
         git submodule update
-3. compile+link the 3rdparty-software, you'll find a bunch of shell scripts in the vendor-folder
-   first compile jpeg, png, tiff and freetype, then dcmtk, libvnc and finally osg
+3. compile+link the 3rdparty-software, you'll find a bunch of shell scripts in the vendor-folder. First compile jpeg, png, tiff and freetype, then dcmtk, libvnc and finally osg
+
+   If you have problems compiling one of the dependencies, then remove the "<dependency>-build"-folder and try again.
+
+4. open the presen3d-workspace in xcode and compile the project. There's a runscript-phase which will copy all dependeny into the app-bundle
