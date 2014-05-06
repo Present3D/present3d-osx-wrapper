@@ -64,7 +64,5 @@ cp libfreetype.6.dylib "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Frame
 install_name_tool -change libvncclient.dylib @executable_path/../Frameworks/libvncclient.dylib  "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/osgPlugins-${OSG_VERSION}/osgdb_vnc.so"
 
 # libfreetype
-install_name_tool -change @executable_path/../lib/liblua.dylib @executable_path/../Frameworks/liblua.dylib  "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/osgPlugins-${OSG_VERSION}/osgdb_lua.so"
-
-# liblua
 install_name_tool -change "${ROOT}/freetype-build/lib/libfreetype.6.dylib" @executable_path/../Frameworks/libfreetype.6.dylib  "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/PlugIns/osgPlugins-${OSG_VERSION}/osgdb_freetype.so"
+
