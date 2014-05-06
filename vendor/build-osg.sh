@@ -44,6 +44,7 @@ cd ${ROOT}/osg-build
 -D FREETYPE_LIBRARY:FILEPATH=${FREETYPE_ROOT}/lib/libfreetype.6.dylib \
 -D FREETYPE_INCLUDE_DIR_freetype2:PATH=${FREETYPE_ROOT}/include/freetype2 \
 -D FREETYPE_INCLUDE_DIR_ft2build:PATH=${FREETYPE_ROOT}/include/freetype2 \
+-D OSG_USE_LOCAL_LUA_SOURCE:BOOL=ON \
 -D CMAKE_OSX_SYSROOT:STRING=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk ../osg-source
 
 #build osg
