@@ -8,7 +8,7 @@ PNG_ROOT=${ROOT}/png-build/install
 # create cmake-configuration for libvnc
 mkdir -p "${ROOT}/libvnc-build/install"
 cd ${ROOT}/libvnc-build
-/usr/bin/cmake -G Xcode \
+cmake -G Xcode \
 -D CMAKE_INSTALL_PREFIX:PATH=${ROOT}/libvnc-build/install \
 -D LIBGCRYPT_LIBRARIES:PATH='' \
 -D GNUTLS_LIBRARY:PATH='' \

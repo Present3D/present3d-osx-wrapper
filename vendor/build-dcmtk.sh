@@ -7,7 +7,7 @@ TIFF_ROOT=${ROOT}/tiff-build/install
 # create cmake-configuration for dcmtk
 mkdir -p "${ROOT}/dcmtk-build/install"
 cd ${ROOT}/dcmtk-build
-/usr/bin/cmake -G Xcode \
+cmake -G Xcode \
 -D CMAKE_INSTALL_PREFIX:PATH=${ROOT}/dcmtk-build/install \
 -D DCMTK_WITH_TIFF:BOOL=ON \
 -D DCMTK_WITH_ICONV:BOOL=OFF \

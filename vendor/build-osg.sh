@@ -10,7 +10,7 @@ FREETYPE_ROOT=${ROOT}/freetype-build/
 # create cmake-configuration for osg
 mkdir -p "${ROOT}/osg-build"
 cd ${ROOT}/osg-build
-/usr/bin/cmake -G Xcode \
+cmake -G Xcode \
 -D OSG_COMPILE_FRAMEWORKS:BOOL=1 \
 -D OSG_COMPILE_FRAMEWORKS_INSTALL_NAME_DIR:STRING=@executable_path/../Frameworks \
 -D OSG_WINDOWING_SYSTEM:STRING=Cocoa \
